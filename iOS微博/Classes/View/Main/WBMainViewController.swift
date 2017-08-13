@@ -17,7 +17,6 @@ class WBMainViewController: UITabBarController {
       
         setupChildControllers()
        
-
     }
 }
 
@@ -49,17 +48,16 @@ extension  WBMainViewController {
      {
 
         guard let   clsName =  dict["clsName"],
-              let title =  dict["title"],
-              let imageName  =  dict["imageName"],
-              let cls = NSClassFromString (Bundle.main.namespace + "." + clsName) as? UIViewController.Type
-
+              let   title =  dict["title"],
+              let   imageName  =  dict["imageName"],
+              let   cls = NSClassFromString (Bundle.main.namespace + "." + clsName) as?           UIViewController.Type
             else{
-                print("还是无法出现首页")
-                  return  UIViewController()
+                   // 存在值为nil的内容
+                     return  UIViewController()
                }
       
 //         let cls = UIViewController.self   //当初测试所用
-       
+        // 1》创建视图控制器
         let vc = cls.init()
         //标题的读取
         vc.title = title
