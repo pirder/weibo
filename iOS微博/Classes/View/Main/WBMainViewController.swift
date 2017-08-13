@@ -16,21 +16,48 @@ class WBMainViewController: UITabBarController {
         super.viewDidLoad()
       
         setupChildControllers()
-       
+       setcomposeButton()
+        
     }
+    fileprivate lazy var composeButton: UIButton = UIButton(type: .custom)
 }
 
 
 extension  WBMainViewController {
 
+    // 设置按钮
+    fileprivate func setcomposeButton(){
+        // 将按钮加入我们的tabbar
+        tabBar.addSubview(composeButton)
+
+        //  button的背景图片
+        composeButton.setBackgroundImage(#imageLiteral(resourceName: "tabbar_compose_button"), for: .normal)
+        composeButton.setImage(#imageLiteral(resourceName: "tabbar_compose_icon_add"), for: .normal)
+        composeButton.setBackgroundImage(#imageLiteral(resourceName: "tabbar_compose_button_highlighted"),
+                                         for: .highlighted)
+        composeButton.setImage(#imageLiteral(resourceName: "tabbar_compose_icon_add_highlighted"),
+                               for: .highlighted)
+
+        // 计算出tabbar 的位置，确定我们的按钮的位置
+        let count = CGFloat( childViewControllers.count)
+        let w = tabBar.bounds.width / count
+        let h = tabBar.bounds.height
+      
+        //设置位置。
+        composeButton.center = CGPoint(x: tabBar.center.x , y: tabBar.bounds.size.height * 0.5 )
+        composeButton.bounds.size.height = h
+        composeButton.bounds.size.width = w + 4
+        }
+    
+    
+    
     //设置子控制器
-
-
-    func  setupChildControllers()
+   func  setupChildControllers()
     {
     let array =  [
       ["clsName": "WBHomeViewController","title": "首页","imageName": "home"],
       ["clsName": "WBMessageViewController","title": "消息","imageName": "message_center" ],
+      ["clsName": "存放按钮位置"],
       ["clsName": "WBDiscoverViewController","title": "发现","imageName": "discover"],
       ["clsName": "WBProfileViewController","title": "我","imageName": "profile" ]
         ]

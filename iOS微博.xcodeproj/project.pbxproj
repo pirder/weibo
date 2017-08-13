@@ -19,6 +19,8 @@
 		2D02BCCF1F3DB7900045AE7B /* WBDiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D02BCCE1F3DB7900045AE7B /* WBDiscoverViewController.swift */; };
 		2D02BCD11F3DB7AA0045AE7B /* WBProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D02BCD01F3DB7AA0045AE7B /* WBProfileViewController.swift */; };
 		2D4278231F3F6D8B0080A9F3 /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4278221F3F6D8B0080A9F3 /* Bundle+Extensions.swift */; };
+		2D4F697D1F408A01007A6869 /* tabbar_compose_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D4F697B1F408A01007A6869 /* tabbar_compose_button@2x.png */; };
+		2D4F697E1F408A01007A6869 /* tabbar_compose_button@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D4F697C1F408A01007A6869 /* tabbar_compose_button@3x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,8 @@
 		2D02BCCE1F3DB7900045AE7B /* WBDiscoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBDiscoverViewController.swift; sourceTree = "<group>"; };
 		2D02BCD01F3DB7AA0045AE7B /* WBProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBProfileViewController.swift; sourceTree = "<group>"; };
 		2D4278221F3F6D8B0080A9F3 /* Bundle+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Extensions.swift"; sourceTree = "<group>"; };
+		2D4F697B1F408A01007A6869 /* tabbar_compose_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tabbar_compose_button@2x.png"; path = "iOS微博/Assets.xcassets/TabBar/tabbar_compose_button.imageset/tabbar_compose_button@2x.png"; sourceTree = "<group>"; };
+		2D4F697C1F408A01007A6869 /* tabbar_compose_button@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tabbar_compose_button@3x.png"; path = "iOS微博/Assets.xcassets/TabBar/tabbar_compose_button.imageset/tabbar_compose_button@3x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +95,8 @@
 				2D02BC9E1F3DAA820045AE7B /* iOS微博Tests */,
 				2D02BCA91F3DAA820045AE7B /* iOS微博UITests */,
 				2D02BC881F3DAA820045AE7B /* Products */,
+				2D4F697B1F408A01007A6869 /* tabbar_compose_button@2x.png */,
+				2D4F697C1F408A01007A6869 /* tabbar_compose_button@3x.png */,
 			);
 			sourceTree = "<group>";
 		};
@@ -337,7 +343,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D4F697E1F408A01007A6869 /* tabbar_compose_button@3x.png in Resources */,
 				2D02BC921F3DAA820045AE7B /* Assets.xcassets in Resources */,
+				2D4F697D1F408A01007A6869 /* tabbar_compose_button@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
