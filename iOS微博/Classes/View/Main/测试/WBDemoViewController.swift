@@ -13,6 +13,7 @@ class WBDemoViewController: WBBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        title = "第\((navigationController?.childViewControllers.count)!-1) 个"
         // Do any additional setup after loading the view.
     }
 
@@ -21,15 +22,22 @@ class WBDemoViewController: WBBaseViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @objc fileprivate func shouNext(){
+    let vc = WBDemoViewController()
+        
+     navigationController?.pushViewController(vc, animated: true)
+        
     }
-    */
+}
 
+
+
+
+extension WBDemoViewController{
+    // 重写父类方法
+    override func setupUI() {
+        
+        super.setupUI()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "下一个", style: .plain, target: self, action: #selector(shouNext))
+    }
 }

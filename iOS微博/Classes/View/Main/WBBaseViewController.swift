@@ -19,10 +19,12 @@ class WBBaseViewController: UIViewController {
 
 }
     // 设置 界面
+    // 若没有设置背景颜色，push时候会卡顿
 extension WBBaseViewController{
 
      func setupUI(){
         print("setupUI")
+        view.backgroundColor = UIColor.white
     }
 
 }
