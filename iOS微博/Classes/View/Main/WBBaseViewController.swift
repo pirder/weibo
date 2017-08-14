@@ -12,7 +12,7 @@ class WBBaseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-     setupUI()
+           setupUI()
         // Do any additional setup after loading the view.
     }
   

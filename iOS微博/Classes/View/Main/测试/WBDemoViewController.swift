@@ -41,5 +41,6 @@ extension WBDemoViewController{
         
        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "下一个", target: self,
                                                            action: #selector(shouNext))
+        
     }
 }

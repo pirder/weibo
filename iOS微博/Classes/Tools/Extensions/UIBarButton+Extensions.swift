@@ -10,7 +10,7 @@ import UIKit
 
 extension UIBarButtonItem{
 
-    /// 创建UIBarButtonItem
+    /// - 创建UIBarButtonItem
     ///
     /// - Parameters:
     ///   - title: title 名
@@ -19,6 +19,7 @@ extension UIBarButtonItem{
     ///   - action: action 
     convenience  init(title: String,Size: CGFloat = 17,target: Any?, action: Selector){
         let btn: UIButton = UIButton()
+        
         btn.setTitle(title, for: .normal)
         btn.setTitle(title, for: .highlighted)
         btn.setTitleColor(UIColor.darkGray, for: .normal)

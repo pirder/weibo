@@ -12,8 +12,8 @@ class WBNavigationController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
+// 拉动返回（百度解决）
+        self.interactivePopGestureRecognizer?.delegate = self as? UIGestureRecognizerDelegate
         
 
         // Do any additional setup after loading the view.
@@ -27,7 +27,7 @@ class WBNavigationController: UINavigationController {
         // Dispose of any resources that can be recreated.
     }
     
- 
+ // push 进去
     override func pushViewController(_ viewController: UIViewController, animated: Bool) {
         
         
@@ -51,17 +51,18 @@ class WBNavigationController: UINavigationController {
                 }
                 
                 vc.navigationItem.leftBarButtonItem = UIBarButtonItem(title: title, target: self, action: #selector(popToIsback))
+                
             }
-            
+          
         }
         
         
         //调用父类的
         super.pushViewController(viewController, animated: true)
-        
-        
+      // 可拉动返回
+        self.interactivePopGestureRecognizer?.isEnabled = true
     }
-
+//返回上一页
     @objc fileprivate func popToIsback(){
       
         popViewController(animated: true)
