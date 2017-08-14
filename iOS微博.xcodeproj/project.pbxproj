@@ -18,6 +18,7 @@
 		2D02BCCD1F3DB77E0045AE7B /* WBMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D02BCCC1F3DB77E0045AE7B /* WBMessageViewController.swift */; };
 		2D02BCCF1F3DB7900045AE7B /* WBDiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D02BCCE1F3DB7900045AE7B /* WBDiscoverViewController.swift */; };
 		2D02BCD11F3DB7AA0045AE7B /* WBProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D02BCD01F3DB7AA0045AE7B /* WBProfileViewController.swift */; };
+		2D422A271F41A630004FA1A9 /* WBDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D422A261F41A630004FA1A9 /* WBDemoViewController.swift */; };
 		2D4278231F3F6D8B0080A9F3 /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4278221F3F6D8B0080A9F3 /* Bundle+Extensions.swift */; };
 		2D4F697D1F408A01007A6869 /* tabbar_compose_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D4F697B1F408A01007A6869 /* tabbar_compose_button@2x.png */; };
 		2D4F697E1F408A01007A6869 /* tabbar_compose_button@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D4F697C1F408A01007A6869 /* tabbar_compose_button@3x.png */; };
@@ -58,6 +59,7 @@
 		2D02BCCC1F3DB77E0045AE7B /* WBMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBMessageViewController.swift; sourceTree = "<group>"; };
 		2D02BCCE1F3DB7900045AE7B /* WBDiscoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBDiscoverViewController.swift; sourceTree = "<group>"; };
 		2D02BCD01F3DB7AA0045AE7B /* WBProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBProfileViewController.swift; sourceTree = "<group>"; };
+		2D422A261F41A630004FA1A9 /* WBDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBDemoViewController.swift; sourceTree = "<group>"; };
 		2D4278221F3F6D8B0080A9F3 /* Bundle+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Extensions.swift"; sourceTree = "<group>"; };
 		2D4F697B1F408A01007A6869 /* tabbar_compose_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tabbar_compose_button@2x.png"; path = "iOS微博/Assets.xcassets/TabBar/tabbar_compose_button.imageset/tabbar_compose_button@2x.png"; sourceTree = "<group>"; };
 		2D4F697C1F408A01007A6869 /* tabbar_compose_button@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tabbar_compose_button@3x.png"; path = "iOS微博/Assets.xcassets/TabBar/tabbar_compose_button.imageset/tabbar_compose_button@3x.png"; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 		2D02BCBE1F3DB4810045AE7B /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				2D422A251F41A5D0004FA1A9 /* 测试 */,
 				2D02BCC21F3DB55E0045AE7B /* WBMainViewController.swift */,
 				2D02BCC41F3DB5B30045AE7B /* WBNavigationController.swift */,
 				2D02BCC81F3DB6D60045AE7B /* WBBaseViewController.swift */,
@@ -224,6 +227,14 @@
 			children = (
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2D422A251F41A5D0004FA1A9 /* 测试 */ = {
+			isa = PBXGroup;
+			children = (
+				2D422A261F41A630004FA1A9 /* WBDemoViewController.swift */,
+			);
+			path = "测试";
 			sourceTree = "<group>";
 		};
 		2D4278211F3F6D180080A9F3 /* Extensions */ = {
@@ -372,6 +383,7 @@
 			files = (
 				2D02BCC91F3DB6D60045AE7B /* WBBaseViewController.swift in Sources */,
 				2D02BCD11F3DB7AA0045AE7B /* WBProfileViewController.swift in Sources */,
+				2D422A271F41A630004FA1A9 /* WBDemoViewController.swift in Sources */,
 				2D02BCCF1F3DB7900045AE7B /* WBDiscoverViewController.swift in Sources */,
 				2D4278231F3F6D8B0080A9F3 /* Bundle+Extensions.swift in Sources */,
 				2D02BCC31F3DB55E0045AE7B /* WBMainViewController.swift in Sources */,

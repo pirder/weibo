@@ -21,15 +21,36 @@ class WBHomeViewController: WBBaseViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @objc fileprivate func shouFrident(){
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        print(#function)
+        let vc = WBDemoViewController()
+        vc.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(vc, animated: true)
+        
     }
-    */
-
+    
 }
+
+// 设置界面
+extension WBHomeViewController{
+// 重写父类
+    override func setupUI() {
+        super.setupUI()
+        print("重写setupui")
+     
+    //设置导航栏按钮
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "好友", style: .plain, target: self, action: #selector(shouFrident))
+        
+    }
+  }
+
+
+
+
+
+
+
+
+
+
