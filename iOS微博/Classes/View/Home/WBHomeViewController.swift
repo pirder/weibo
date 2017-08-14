@@ -41,11 +41,10 @@ extension WBHomeViewController{
     override func setupUI() {
         super.setupUI()
         print("重写setupui")
-     
     //设置导航栏按钮
 
        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "好友", target: self, action: #selector(shouFrident))
-    }
+           }
   }
 
 

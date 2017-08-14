@@ -13,7 +13,7 @@ class WBNavigationController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
 // 拉动返回（百度解决）
-        self.interactivePopGestureRecognizer?.delegate = self as? UIGestureRecognizerDelegate
+        interactivePopGestureRecognizer?.delegate = self as? UIGestureRecognizerDelegate
         
 
         // Do any additional setup after loading the view.
@@ -24,6 +24,7 @@ class WBNavigationController: UINavigationController {
         super.didReceiveMemoryWarning()
         
         
+
         // Dispose of any resources that can be recreated.
     }
     
@@ -36,37 +37,39 @@ class WBNavigationController: UINavigationController {
         navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.darkGray]
         
        //除了根控制器外都必须隐藏底部的导航栏 根数目子控制器 = 0
-
-        if childViewControllers.count > 0 {
+         if childViewControllers.count > 0 {
             viewController.hidesBottomBarWhenPushed = true
-            
+  
             if let vc = viewController as? WBBaseViewController{
-            
+                
+
                 var title = "返回"
                 
                 if childViewControllers.count == 1 {
                   
                    title = childViewControllers.first?.title ?? "返回"
-                
+                    
                 }
                 
                 vc.navigationItem.leftBarButtonItem = UIBarButtonItem(title: title, target: self, action: #selector(popToIsback))
                 
             }
-          
+         
         }
         
         
         //调用父类的
         super.pushViewController(viewController, animated: true)
       // 可拉动返回
-        self.interactivePopGestureRecognizer?.isEnabled = true
+      
     }
 //返回上一页
     @objc fileprivate func popToIsback(){
       
         popViewController(animated: true)
         
+        }
+     
     }
 
-}
+
