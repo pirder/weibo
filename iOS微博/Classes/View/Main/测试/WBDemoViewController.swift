@@ -38,6 +38,19 @@ extension WBDemoViewController{
     override func setupUI() {
         
         super.setupUI()
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "下一个", style: .plain, target: self, action: #selector(shouNext))
+    //    navigationItem.rightBarButtonItem = UIBarButtonItem(title: "下一个", style: .plain, target: self, action: #selector(shouNext))
+    
+//        let btn: UIBarButtonItem = UIBarButtonItem(title: "下一个", style: .plain, target: self, action: #selector(shouNext))
+//        btn.tintColor = UIColor.darkGray
+     //    navigationItem.rightBarButtonItem = btn
+        let btn: UIButton = UIButton()
+        btn.setTitle("下一个", for: .normal)
+        btn.setTitleColor(UIColor.darkGray, for: .normal)
+        btn.setTitleColor(UIColor.orange , for: .highlighted)
+        btn.addTarget(self, action: #selector(shouNext), for: .touchUpInside)
+        btn.sizeToFit()
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: btn)
+
     }
 }
