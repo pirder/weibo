@@ -19,9 +19,15 @@ class WBMainViewController: UITabBarController {
        setcomposeButton()
         
     }
+    
+    // 写微博
+   @objc fileprivate func  composeStatus() {
+        
+        print("写微博")
+    }
+
     fileprivate lazy var composeButton: UIButton = UIButton(type: .custom)
 }
-
 
 extension  WBMainViewController {
 
@@ -47,12 +53,15 @@ extension  WBMainViewController {
         composeButton.center = CGPoint(x: tabBar.center.x , y: tabBar.bounds.size.height * 0.5 )
         composeButton.bounds.size.height = h
         composeButton.bounds.size.width = w + 4
+        
+        // 按钮监听
+        composeButton.addTarget(self, action: #selector(composeStatus), for: .touchUpInside)
         }
     
     
     
     //设置子控制器
-   func  setupChildControllers()
+  fileprivate func  setupChildControllers()
     {
     let array =  [
       ["clsName": "WBHomeViewController","title": "首页","imageName": "home"],
@@ -71,7 +80,7 @@ extension  WBMainViewController {
     
     
     
-    func controller(dict: [String: String]) -> UIViewController
+  fileprivate  func controller(dict: [String: String]) -> UIViewController
      {
 
         guard let   clsName =  dict["clsName"],
