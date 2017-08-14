@@ -25,6 +25,8 @@ extension WBBaseViewController{
      func setupUI(){
         print("setupUI")
         view.backgroundColor = UIColor.white
+        
+        
     }
 
 }

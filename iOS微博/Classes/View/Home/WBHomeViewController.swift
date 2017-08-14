@@ -43,15 +43,7 @@ extension WBHomeViewController{
         print("重写setupui")
      
     //设置导航栏按钮
-//        
-//        let btn: UIButton = UIButton()
-//        btn.setTitle("好友", for: .normal)
-//        btn.setTitleColor(UIColor.darkGray, for: .normal)
-//        btn.setTitleColor(UIColor.orange , for: .highlighted)
-//        btn.addTarget(self, action: #selector(shouFrident), for: .touchUpInside)
-//        btn.sizeToFit()
-//         btn.titleLabel?.font = UIFont.systemFont(ofSize: 17) //字体设定大小
-//        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: btn)
+
        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "好友", target: self, action: #selector(shouFrident))
     }
   }
