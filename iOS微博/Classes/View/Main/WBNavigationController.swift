@@ -24,17 +24,16 @@ class WBNavigationController: UINavigationController {
         // Dispose of any resources that can be recreated.
     }
     
-
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+ 
+    override func pushViewController(_ viewController: UIViewController, animated: Bool) {
+       //除了根控制器外都必须隐藏底部的导航栏 根数目子控制器 = 0
+        if childViewControllers.count > 0 {
+            viewController.hidesBottomBarWhenPushed = true
+        }
+        //调用父类的
+        super.pushViewController(viewController, animated: true)
     }
-    */
+
+  
 
 }

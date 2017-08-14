@@ -24,8 +24,11 @@ class WBHomeViewController: WBBaseViewController {
     @objc fileprivate func shouFrident(){
 
         print(#function)
+        
         let vc = WBDemoViewController()
-        vc.hidesBottomBarWhenPushed = true
+        
+        
+        
         navigationController?.pushViewController(vc, animated: true)
         
     }
