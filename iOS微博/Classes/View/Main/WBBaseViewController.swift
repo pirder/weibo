@@ -20,7 +20,7 @@ class WBBaseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupUI()
+           setupUI()
         
         loadDate()
     }
@@ -56,6 +56,10 @@ extension WBBaseViewController  {
         view.backgroundColor = UIColor.white
        
         
+        // 取消自动缩紧 一般要设置
+        automaticallyAdjustsScrollViewInsets = false
+        
+
         
         setupNavigationBar()
         setupTableView()
@@ -64,9 +68,11 @@ extension WBBaseViewController  {
         
     }
     
+    //表格-----
+    
     fileprivate func setupTableView(){
     
-        // 处理
+        // 表格处理
     tableView = UITableView(frame: view.bounds, style: .plain)
         
         // 添加到视图，位于navigationbar后面
@@ -76,7 +82,20 @@ extension WBBaseViewController  {
      tableView?.dataSource = self
      tableView?.delegate = self
         
+        
+        //设置与上方navigation的距离
+        // 内容缩进
+       tableView?.contentInset = UIEdgeInsets(top: navigationBar.bounds.height,
+                                              left: 0,
+                                              bottom: tabBarController?.tabBar.bounds.height ?? 49,
+                                              right: 0)
+        
+        
+        
     }
+    
+    
+    // 导航------
     fileprivate func setupNavigationBar(){
         
         // 添加导航栏
