@@ -65,7 +65,7 @@ extension WBBaseViewController  {
         view.backgroundColor = UIColor.white
        
         
-        // 取消自动缩紧 一般要设置
+        // 取消自动缩进 一般要设置
         automaticallyAdjustsScrollViewInsets = false
         
 

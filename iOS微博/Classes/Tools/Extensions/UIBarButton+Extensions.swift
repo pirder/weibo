@@ -17,7 +17,7 @@ extension UIBarButtonItem{
     ///   - Size:  size 默认17号
     ///   - target: target
     ///   - action: action 
-    convenience  init(title: String,Size: CGFloat = 17,target: Any?, action: Selector){
+    convenience  init(title: String,Size: CGFloat = 17,target: Any?, action: Selector, isBack: Bool = false){
         let btn: UIButton = UIButton()
         
         btn.setTitle(title, for: .normal)
@@ -25,8 +25,15 @@ extension UIBarButtonItem{
         btn.setTitleColor(UIColor.darkGray, for: .normal)
         btn.setTitleColor(UIColor.orange , for: .highlighted)
         btn.addTarget(target, action: action, for: .touchUpInside)
-        btn.sizeToFit()
+        
         btn.titleLabel?.font = UIFont.systemFont(ofSize: 17)
+        if isBack{
+            let image = "navigationbar_back_withtext"
+            btn.setImage(UIImage(named: image), for: .normal)
+            btn.setImage(UIImage(named: image + "_highlighted"), for: .highlighted)
+
+        }
+        btn.sizeToFit()
         // 实例化 btn
         self.init(customView: btn)
     }

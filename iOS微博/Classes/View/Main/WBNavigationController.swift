@@ -56,7 +56,7 @@ class WBNavigationController: UINavigationController {
                     
                 }
                 
-                vc.natitem.leftBarButtonItem = UIBarButtonItem(title: title, target: self, action: #selector(popToIsback))
+                vc.natitem.leftBarButtonItem = UIBarButtonItem(title: title, target: self, action: #selector(popToIsback), isBack: true)
                 
             }
          
