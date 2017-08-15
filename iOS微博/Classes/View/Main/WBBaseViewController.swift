@@ -10,6 +10,8 @@ import UIKit
 
 class WBBaseViewController: UIViewController {
     
+    // 用户登录与否
+    var userLogon = false
     // 表格视图 ／可选，登陆与否
     var tableView: UITableView?
     
@@ -69,13 +71,14 @@ extension WBBaseViewController  {
 
         
         setupNavigationBar()
-        setupTableView()
+        
+        userLogon ? setupTableView() :setupVistorView()
         
         
         
     }
     
-    //表格-----
+    //设置表格视图-----
     
     fileprivate func setupTableView(){
     
@@ -108,7 +111,16 @@ extension WBBaseViewController  {
         
     }
     
+    //设置访客视图
     
+    fileprivate func setupVistorView(){
+    
+        let vistorview = UIView(frame: view.bounds)
+        
+        vistorview.backgroundColor = UIColor.white
+        
+        view.insertSubview(vistorview, belowSubview: navigationBar)
+    }
     // 导航------
     fileprivate func setupNavigationBar(){
         
