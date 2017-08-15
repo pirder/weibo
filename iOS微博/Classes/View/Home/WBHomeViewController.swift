@@ -33,12 +33,25 @@ class WBHomeViewController: WBBaseViewController {
         // 尾随闭包
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()  ) {
             for i in 0..<15 {
+                
+                if self.isPullup {
+                
+                   //上拉 在底部加入数据
+                    self.statusList.append("上拉记载的数据 \(i)")
+                  }
+                else{
+                    
                 self.statusList.insert(i.description, at: 0)
+                    
+                    }
             }
             
        print("加载数据")
            // 结束下拉刷新控件
             self.refreshControlloer?.endRefreshing()
+            
+            // 把ispullup 恢复 false
+            self.isPullup = false
             
             //  刷新加载表格
             self.tableView?.reloadData()

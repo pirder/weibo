@@ -174,6 +174,8 @@ extension WBBaseViewController: UITableViewDataSource,UITableViewDelegate {
         if row == (count - 1) && !isPullup {
             print("上拉刷新")
             // 上一次缺此函数造成错误
+            isPullup = true
+            
             loadDate()
             
         }
