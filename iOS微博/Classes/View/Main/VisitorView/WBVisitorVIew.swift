@@ -112,14 +112,15 @@ extension WBVisitorVIew {
                                          attribute: .bottom,
                                          multiplier: 1.0,
                                          constant: 20))
-//        // 宽度控制
-//        addConstraint(NSLayoutConstraint(item: tipLabel,
-//                                         attribute: .width,
-//                                         relatedBy: .equal,
-//                                         toItem: nil,
-//                                         attribute: .notAnAttribute,
-//                                         multiplier: 1.0,
-//                                         constant: 236))
+        // 宽度控制
+        // label不够长，正好不需要 270 为 宽度， 在 UIimage+extensions里面有一个换行
+        addConstraint(NSLayoutConstraint(item: tipLabel,
+                                         attribute: .width,
+                                         relatedBy: .equal,
+                                         toItem: nil,
+                                         attribute: .notAnAttribute,
+                                         multiplier: 1.0,
+                                         constant: 270))
         
 
     
