@@ -39,7 +39,7 @@ extension WBDemoViewController{
         
         super.setupUI()
         
-       navigationItem.rightBarButtonItem = UIBarButtonItem(title: "下一个", target: self,
+       natitem.rightBarButtonItem = UIBarButtonItem(title: "下一个", target: self,
                                                            action: #selector(shouNext))
         
     }
