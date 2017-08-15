@@ -50,13 +50,9 @@ class WBNavigationController: UINavigationController {
             
             // 只有一个子控制器时候，返回改为“”首页“” 或者其他的“我”。。。
             if let vc = viewController as? WBBaseViewController{
-                
-
                 var title = "返回"
-      //   print("进入")
                 if childViewControllers.count == 1 {
-                  
-                   title = childViewControllers.first?.title ?? "返回"
+                    title = childViewControllers.first?.title ?? "返回"
                     
                 }
                 
@@ -76,7 +72,6 @@ class WBNavigationController: UINavigationController {
     @objc fileprivate func popToIsback(){
       
      self.popViewController(animated: true)
-        
         }
      
     }

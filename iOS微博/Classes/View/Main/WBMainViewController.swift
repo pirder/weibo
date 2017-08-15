@@ -20,6 +20,17 @@ class WBMainViewController: UITabBarController {
         
     }
     
+    /*  .portrait :竖屏
+      .landscape ：横屏
+       单独处理
+     在这里main设置之后，所有的子控制器都遵守此
+    */
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask{
+    return .portrait
+     
+    }
+    
+    
     // 写微博
    @objc fileprivate func  composeStatus() {
         
