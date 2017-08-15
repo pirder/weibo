@@ -117,9 +117,9 @@ extension WBBaseViewController  {
     
     fileprivate func setupVistorView(){
     
-        let vistorview = UIView(frame: view.bounds)
+        let vistorview = WBVisitorVIew(frame: view.bounds)
         
-        vistorview.backgroundColor = UIColor.white
+       
         
         view.insertSubview(vistorview, belowSubview: navigationBar)
     }

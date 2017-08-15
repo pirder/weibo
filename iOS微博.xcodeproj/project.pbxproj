@@ -21,6 +21,7 @@
 		2D422A271F41A630004FA1A9 /* WBDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D422A261F41A630004FA1A9 /* WBDemoViewController.swift */; };
 		2D422A291F41D47F004FA1A9 /* UIBarButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D422A281F41D47F004FA1A9 /* UIBarButton+Extensions.swift */; };
 		2D4278231F3F6D8B0080A9F3 /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4278221F3F6D8B0080A9F3 /* Bundle+Extensions.swift */; };
+		2D42FAE31F4322B7000E4239 /* WBVisitorVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D42FAE21F4322B7000E4239 /* WBVisitorVIew.swift */; };
 		2D4F697D1F408A01007A6869 /* tabbar_compose_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D4F697B1F408A01007A6869 /* tabbar_compose_button@2x.png */; };
 		2D4F697E1F408A01007A6869 /* tabbar_compose_button@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D4F697C1F408A01007A6869 /* tabbar_compose_button@3x.png */; };
 /* End PBXBuildFile section */
@@ -63,6 +64,7 @@
 		2D422A261F41A630004FA1A9 /* WBDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBDemoViewController.swift; sourceTree = "<group>"; };
 		2D422A281F41D47F004FA1A9 /* UIBarButton+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButton+Extensions.swift"; sourceTree = "<group>"; };
 		2D4278221F3F6D8B0080A9F3 /* Bundle+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Extensions.swift"; sourceTree = "<group>"; };
+		2D42FAE21F4322B7000E4239 /* WBVisitorVIew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBVisitorVIew.swift; sourceTree = "<group>"; };
 		2D4F697B1F408A01007A6869 /* tabbar_compose_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tabbar_compose_button@2x.png"; path = "iOS微博/Assets.xcassets/TabBar/tabbar_compose_button.imageset/tabbar_compose_button@2x.png"; sourceTree = "<group>"; };
 		2D4F697C1F408A01007A6869 /* tabbar_compose_button@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tabbar_compose_button@3x.png"; path = "iOS微博/Assets.xcassets/TabBar/tabbar_compose_button.imageset/tabbar_compose_button@3x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -200,6 +202,7 @@
 		2D02BCBE1F3DB4810045AE7B /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				2D42FAE11F432253000E4239 /* VisitorView */,
 				2D422A251F41A5D0004FA1A9 /* 测试 */,
 				2D3D90331F42C962006DF262 /* 主控制器 */,
 				2D02BCC81F3DB6D60045AE7B /* WBBaseViewController.swift */,
@@ -254,6 +257,14 @@
 				2D422A281F41D47F004FA1A9 /* UIBarButton+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		2D42FAE11F432253000E4239 /* VisitorView */ = {
+			isa = PBXGroup;
+			children = (
+				2D42FAE21F4322B7000E4239 /* WBVisitorVIew.swift */,
+			);
+			path = VisitorView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -398,6 +409,7 @@
 				2D02BCCF1F3DB7900045AE7B /* WBDiscoverViewController.swift in Sources */,
 				2D4278231F3F6D8B0080A9F3 /* Bundle+Extensions.swift in Sources */,
 				2D422A291F41D47F004FA1A9 /* UIBarButton+Extensions.swift in Sources */,
+				2D42FAE31F4322B7000E4239 /* WBVisitorVIew.swift in Sources */,
 				2D02BCC31F3DB55E0045AE7B /* WBMainViewController.swift in Sources */,
 				2D02BCCB1F3DB7440045AE7B /* WBHomeViewController.swift in Sources */,
 				2D02BC8B1F3DAA820045AE7B /* AppDelegate.swift in Sources */,
