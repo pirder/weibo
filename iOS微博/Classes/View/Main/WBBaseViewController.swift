@@ -16,6 +16,8 @@ class WBBaseViewController: UIViewController {
     // 刷新控件
     var refreshControlloer: UIRefreshControl?
     
+    // 上拉刷新与否
+    var isPullup = false
     // lazy 加载导航条
     lazy var navigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: UIScreen.main.applicationFrame.width, height: 64))
     // lazy 导航条目  需要时在加载节约 内存
@@ -34,6 +36,8 @@ class WBBaseViewController: UIViewController {
     
     func loadDate()  {
         
+        // 子类不实行方法，默认关闭自动刷新
+        refreshControlloer?.endRefreshing()
     }
     // 重写title 将条目导入新的自定义 navigationBar
     override var title: String?{
@@ -137,6 +141,28 @@ extension WBBaseViewController: UITableViewDataSource,UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return  UITableViewCell()
     }
-  
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        // 1 row
+        let row = indexPath.row
+        
+        // 2,section
+        let section = tableView.numberOfSections - 1
+        
+        // 判断有无数据
+        if row < 0 || section < 0 {
+            return
+        }
+        
+        // 3 行数
+        let count = tableView.numberOfRows(inSection: section)
+        
+        if row == (count - 1) && !isPullup {
+            print("shanglashuax")
+        }
+        print("section  \(section)")
+         print("cout     \(count)")
+        print(row)
+    }
 
 }

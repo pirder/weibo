@@ -31,13 +31,17 @@ class WBHomeViewController: WBBaseViewController {
         
         print("开始加载数据")
         // 尾随闭包
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1 ) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()  ) {
             for i in 0..<15 {
                 self.statusList.insert(i.description, at: 0)
             }
+            
        print("加载数据")
-            self.tableView?.reloadData()
+           // 结束下拉刷新控件
             self.refreshControlloer?.endRefreshing()
+            
+            //  刷新加载表格
+            self.tableView?.reloadData()
         }
     }
     
