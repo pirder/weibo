@@ -22,8 +22,16 @@ class WBBaseViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         
+        loadDate()
     }
     
+    
+    
+    //  loaddate
+    
+    func loadDate()  {
+        
+    }
     // 重写title 将条目导入新的自定义 navigationBar
     override var title: String?{
     
