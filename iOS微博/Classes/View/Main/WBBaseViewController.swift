@@ -72,6 +72,8 @@ extension WBBaseViewController  {
         
         setupNavigationBar()
         
+        
+        // 三目判断是否访客
         userLogon ? setupTableView() :setupVistorView()
         
         
