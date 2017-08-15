@@ -11,7 +11,7 @@ import UIKit
 class WBBaseViewController: UIViewController {
     
     // 用户登录与否
-    var userLogon = true
+    var userLogon = false
     // 表格视图 ／可选，登陆与否
     var tableView: UITableView?
     

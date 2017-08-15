@@ -28,7 +28,7 @@ class WBVisitorVIew: UIView {
     //背景动画
   fileprivate lazy var houseIconView = UIImageView(image: UIImage(named: "visitordiscover_feed_image_house"))
     //标签
-   fileprivate lazy var tipLabel = UILabel(title: "sajdasjclxjklkc", fontsize: 15, color: UIColor.darkGray)
+   fileprivate lazy var tipLabel = UILabel(title: "关注一些人，回来这里看看有什么惊喜", fontsize: 15, color: UIColor.darkGray)
     
     
     //注册按钮
@@ -96,7 +96,31 @@ extension WBVisitorVIew {
                                          multiplier: 1.0,
                                          constant: 0))
         
-          //
+          // 3 标签
+        addConstraint(NSLayoutConstraint(item: tipLabel,
+                                         attribute: .centerX,
+                                         relatedBy: .equal,
+                                         toItem: iconView,
+                                         attribute: .centerX,
+                                         multiplier: 1.0,
+                                         constant: 0))
+        
+        addConstraint(NSLayoutConstraint(item: tipLabel,
+                                         attribute: .top,
+                                         relatedBy: .equal,
+                                         toItem: iconView,
+                                         attribute: .bottom,
+                                         multiplier: 1.0,
+                                         constant: 20))
+//        // 宽度控制
+//        addConstraint(NSLayoutConstraint(item: tipLabel,
+//                                         attribute: .width,
+//                                         relatedBy: .equal,
+//                                         toItem: nil,
+//                                         attribute: .notAnAttribute,
+//                                         multiplier: 1.0,
+//                                         constant: 236))
+        
 
     
     

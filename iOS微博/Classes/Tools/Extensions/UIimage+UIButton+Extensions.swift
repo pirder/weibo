@@ -15,6 +15,7 @@ extension UILabel{
         text = title
         font = UIFont.systemFont(ofSize: CGFloat(fontsize))
         textColor = color
+        numberOfLines = 0
         sizeToFit()
 //    self.init()
         
