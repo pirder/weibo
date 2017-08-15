@@ -11,7 +11,7 @@ import UIKit
 class WBBaseViewController: UIViewController {
     
     // 用户登录与否
-    var userLogon = false
+    var userLogon = true
     // 表格视图 ／可选，登陆与否
     var tableView: UITableView?
     
@@ -172,11 +172,12 @@ extension WBBaseViewController: UITableViewDataSource,UITableViewDelegate {
         let count = tableView.numberOfRows(inSection: section)
         
         if row == (count - 1) && !isPullup {
-            print("shanglashuax")
+            print("上拉刷新")
+            // 上一次缺此函数造成错误
+            loadDate()
+            
         }
-        print("section  \(section)")
-         print("cout     \(count)")
-        print(row)
+      
     }
 
 }
