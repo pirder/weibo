@@ -26,8 +26,18 @@ class WBHomeViewController: WBBaseViewController {
     }
     
     override func loadDate() {
-        for i in 0..<15 {
-            statusList.insert(i.description, at: 0)
+        
+      // 模拟延时加载
+        
+        print("开始加载数据")
+        // 尾随闭包
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1 ) {
+            for i in 0..<15 {
+                self.statusList.insert(i.description, at: 0)
+            }
+       print("加载数据")
+            self.tableView?.reloadData()
+            self.refreshControlloer?.endRefreshing()
         }
     }
     
