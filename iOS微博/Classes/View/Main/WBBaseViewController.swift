@@ -13,6 +13,9 @@ class WBBaseViewController: UIViewController {
     // 表格视图 ／可选，登陆与否
     var tableView: UITableView?
     
+    // 刷新控件
+    var refreshControlloer: UIRefreshControl?
+    
     // lazy 加载导航条
     lazy var navigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: UIScreen.main.applicationFrame.width, height: 64))
     // lazy 导航条目  需要时在加载节约 内存
@@ -90,7 +93,14 @@ extension WBBaseViewController  {
                                               bottom: tabBarController?.tabBar.bounds.height ?? 49,
                                               right: 0)
         
+        //设置刷新控件
+           //1,实例化控件
+        refreshControlloer = UIRefreshControl()
         
+          // 2，添加控件到表格视图
+        tableView?.addSubview(refreshControlloer!)
+          // 3,添加监听方法
+        refreshControlloer?.addTarget(self, action: #selector(loadDate), for: .valueChanged)
         
     }
     
