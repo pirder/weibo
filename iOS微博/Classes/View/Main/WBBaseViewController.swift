@@ -47,13 +47,14 @@ extension WBBaseViewController{
         // 设置背景颜色
         view.backgroundColor = UIColor.white
         setupNavigationBar()
-        
-        
+        setupTableView()
     }
     
     fileprivate func setupTableView(){
     
-    
+    tableView = UITableView(frame: view.bounds, style: .plain)
+        
+    view.insertSubview(tableView!, belowSubview: navigationBar)
     }
     fileprivate func setupNavigationBar(){
         
