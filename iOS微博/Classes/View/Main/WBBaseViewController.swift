@@ -36,7 +36,7 @@ class WBBaseViewController: UIViewController {
 
      // 设置 界面
     // 若没有设置背景颜色，push时候会卡顿
-extension WBBaseViewController{
+extension WBBaseViewController  {
 
     
    
@@ -46,15 +46,28 @@ extension WBBaseViewController{
         
         // 设置背景颜色
         view.backgroundColor = UIColor.white
+       
+        
+        
         setupNavigationBar()
         setupTableView()
+        
+        
+        
     }
     
     fileprivate func setupTableView(){
     
+        // 处理
     tableView = UITableView(frame: view.bounds, style: .plain)
         
+        // 添加到视图，位于navigationbar后面
     view.insertSubview(tableView!, belowSubview: navigationBar)
+        
+        // tableview的数据源方法 ； 子类直接实现即可
+     tableView?.dataSource = self
+     tableView?.delegate = self
+        
     }
     fileprivate func setupNavigationBar(){
         
@@ -69,5 +82,24 @@ extension WBBaseViewController{
         
     
     }
+    
+
+}
+
+// MARK: - UITableViewDataSource,UITableViewDelegate
+extension WBBaseViewController: UITableViewDataSource,UITableViewDelegate {
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 0
+        
+    }
+    
+    // 基类提供方法，等待子类去实现
+        //  子类不需要 super 因为父类的无作用
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return  UITableViewCell()
+    }
+  
 
 }
