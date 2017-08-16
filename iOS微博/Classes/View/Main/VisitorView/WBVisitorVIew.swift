@@ -31,13 +31,16 @@ class WBVisitorVIew: UIView {
             // 获取有值的时候
             
             tipLabel.text = message
+           
             
             //首页为空不需要传值进来
             
-            if message == "" {
+            if imageName == "" {
                 return
             }
             iconView.image = UIImage(named: imageName)
+            // 其他的子控制器隐藏房子
+            houseIconView.isHidden = true
         }
         
     }
@@ -92,6 +95,10 @@ extension WBVisitorVIew {
         addSubview(tipLabel)
         addSubview(registerButton)
         addSubview(loginButton)
+        
+        // 文本居中 //比较重要，不然出现自动布局也歪了
+        tipLabel.textAlignment = .center
+         tipLabel.numberOfLines = 0 //换行
         
         // 2 取消 autoresizing
         for v in subviews {
@@ -148,15 +155,15 @@ extension WBVisitorVIew {
                                          attribute: .bottom,
                                          multiplier: 1.0,
                                          constant: 20))
-        // 宽度控制
-        // label不够长，正好不需要 270 为 宽度， 在 UIimage+extensions里面有一个换行
-//        addConstraint(NSLayoutConstraint(item: tipLabel,
-//                                         attribute: .width,
-//                                         relatedBy: .equal,
-//                                         toItem: nil,
-//                                         attribute: .notAnAttribute,
-//                                         multiplier: 1.0,
-//                                         constant: 270))
+//         宽度控制
+//         label不够长，正好不需要 270 为 宽度， 在 UIimage+extensions里面有一个换行
+        addConstraint(NSLayoutConstraint(item: tipLabel,
+                                         attribute: .width,
+                                         relatedBy: .equal,
+                                         toItem: nil,
+                                         attribute: .notAnAttribute,
+                                         multiplier: 1.0,
+                                         constant: 265))
         
         // 注册anniu
         addConstraint(NSLayoutConstraint(item: registerButton,

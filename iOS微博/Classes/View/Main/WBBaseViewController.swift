@@ -128,7 +128,7 @@ extension WBBaseViewController  {
         
         view.insertSubview(vistorview, belowSubview: navigationBar)
         
-        // 访客视图外部赋值进来
+        // 访客视图外部赋值进来 在这里无用，只是一个传值进来给WBvisitor 用的
         vistorview.visitorInfo = visitorInfoOut
         
     }
