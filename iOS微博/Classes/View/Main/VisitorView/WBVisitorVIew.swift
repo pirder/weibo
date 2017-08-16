@@ -46,9 +46,8 @@ class WBVisitorVIew: UIView {
 extension WBVisitorVIew {
   
     func setupUI(){
-    
-    backgroundColor = UIColor.white
-        
+    // 16 进制的颜色处理//
+    backgroundColor = UIColor(valueRGB: 0xEDEDED)
         
         // 1 添加控件
         addSubview(iconView)
