@@ -114,14 +114,63 @@ extension WBVisitorVIew {
                                          constant: 20))
         // 宽度控制
         // label不够长，正好不需要 270 为 宽度， 在 UIimage+extensions里面有一个换行
-        addConstraint(NSLayoutConstraint(item: tipLabel,
+//        addConstraint(NSLayoutConstraint(item: tipLabel,
+//                                         attribute: .width,
+//                                         relatedBy: .equal,
+//                                         toItem: nil,
+//                                         attribute: .notAnAttribute,
+//                                         multiplier: 1.0,
+//                                         constant: 270))
+        
+        // 注册anniu
+        addConstraint(NSLayoutConstraint(item: registerButton,
+                                         attribute: .left,
+                                         relatedBy: .equal,
+                                         toItem: tipLabel,
+                                         attribute: .left,
+                                         multiplier: 1.0,
+                                         constant: 0))
+        
+        addConstraint(NSLayoutConstraint(item: registerButton,
+                                         attribute: .top,
+                                         relatedBy: .equal,
+                                         toItem: tipLabel,
+                                         attribute: .bottom,
+                                         multiplier: 1.0,
+                                         constant: 20))
+        addConstraint(NSLayoutConstraint(item: registerButton ,
                                          attribute: .width,
                                          relatedBy: .equal,
                                          toItem: nil,
                                          attribute: .notAnAttribute,
                                          multiplier: 1.0,
-                                         constant: 270))
+                                         constant: 100))
         
+        //登录按钮
+        
+        addConstraint(NSLayoutConstraint(item: loginButton,
+                                         attribute: .right,
+                                         relatedBy: .equal,
+                                         toItem: tipLabel,
+                                         attribute: .right,
+                                         multiplier: 1.0,
+                                         constant: 0))
+        
+        addConstraint(NSLayoutConstraint(item: loginButton,
+                                         attribute: .top,
+                                         relatedBy: .equal,
+                                         toItem: tipLabel,
+                                         attribute: .bottom,
+                                         multiplier: 1.0,
+                                         constant: 20))
+        addConstraint(NSLayoutConstraint(item: loginButton ,
+                                         attribute: .width,
+                                         relatedBy: .equal,
+                                         toItem: registerButton,
+                                         attribute: .width,
+                                         multiplier: 1.0,
+                                         constant: 0))
+    
 
     
     
