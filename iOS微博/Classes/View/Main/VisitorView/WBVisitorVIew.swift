@@ -8,8 +8,45 @@
 
 import UIKit
 
-class WBVisitorVIew: UIView {
 
+
+
+
+
+class WBVisitorVIew: UIView {
+    
+    
+    
+    
+    // 访客视图的信息字典  / imagename / message
+    var visitorView: [String: String]? {
+        
+        didSet{
+            // 获取字典信息
+            guard let imageName = visitorView?["imageName"],
+                let message = visitorView?["message"]
+                else{
+                    return
+            }
+            // 获取有值的时候
+            
+            tipLabel.text = message
+            
+            //首页为空不需要传值进来
+            
+            if message == "" {
+                return
+            }
+            iconView.image = UIImage(named: imageName)
+        }
+        
+    }
+   
+    
+    
+    /// 构造函数
+    ///
+    /// - Parameter frame: <#frame description#>
     override init(frame: CGRect) {
         super.init(frame: frame)
         
