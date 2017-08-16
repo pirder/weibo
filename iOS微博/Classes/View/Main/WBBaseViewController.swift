@@ -12,6 +12,10 @@ class WBBaseViewController: UIViewController {
     
     // 用户登录与否
     var userLogon = false
+    
+    // 访客视图的字典信息，等待外部传进来，然后再传给里面
+    var visitorInfoOut: [String: String]?
+    
     // 表格视图 ／可选，登陆与否
     var tableView: UITableView?
     
@@ -116,12 +120,17 @@ extension WBBaseViewController  {
     //设置访客视图
     
     fileprivate func setupVistorView(){
-    
-        let vistorview = WBVisitorVIew(frame: view.bounds)
-        
        
+        //初始化
+        let vistorview = WBVisitorVIew(frame: view.bounds)
+       
+        //添加访客视图
         
         view.insertSubview(vistorview, belowSubview: navigationBar)
+        
+        // 访客视图外部赋值进来
+        vistorview.visitorInfo = visitorInfoOut
+        
     }
     // 导航------
     fileprivate func setupNavigationBar(){

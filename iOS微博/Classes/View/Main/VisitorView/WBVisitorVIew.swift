@@ -19,12 +19,12 @@ class WBVisitorVIew: UIView {
     
     
     // 访客视图的信息字典  / imagename / message
-    var visitorView: [String: String]? {
+    var visitorInfo: [String: String]? {
         
         didSet{
             // 获取字典信息
-            guard let imageName = visitorView?["imageName"],
-                let message = visitorView?["message"]
+            guard let imageName = visitorInfo?["imageName"],
+                let message = visitorInfo?["message"]
                 else{
                     return
             }

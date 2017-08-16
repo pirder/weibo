@@ -73,40 +73,69 @@ extension  WBMainViewController {
     //设置子控制器
   fileprivate func  setupChildControllers()
     {
-    let array =  [
-      ["clsName": "WBHomeViewController","title": "首页","imageName": "home"],
-      ["clsName": "WBMessageViewController","title": "消息","imageName": "message_center" ],
+        // 能够通过网络json 获取到
+        
+        /// clsName,title,imageName,visitorInfo
+        let array =  [
+            
+        ["clsName": "WBHomeViewController","title": "首页","imageName": "home",
+       "visitorInfo": [ "imageName": "",  "message": "关注一些人，回来这里看看有什么惊喜"]
+        ],
+        
+        
+        ["clsName": "WBMessageViewController","title": "消息","imageName": "message_center",
+         "visitorInfo": [ "imageName": "visitordiscover_image_message",  "message": "登录后，别人评论的微博，发给你的消息，都会在这里收到通知哦"]
+            ],
+        
       ["clsName": "存放按钮位置"],
-      ["clsName": "WBDiscoverViewController","title": "发现","imageName": "discover"],
-      ["clsName": "WBProfileViewController","title": "我","imageName": "profile" ]
+      
+      ["clsName": "WBDiscoverViewController","title": "发现","imageName": "discover",
+       "visitorInfo": [ "imageName": "visitordiscover_image_message",  "message": "登录后，最新，最热微博尽在掌握，不再会与事实潮流插肩而过"]],
+      
+      ["clsName": "WBProfileViewController","title": "我","imageName": "profile",
+       "visitorInfo": [ "imageName": "visitordiscover_image_profile",  "message": "登录后，你的信息风采展现给别人"]]
+            
+            
         ]
+        
+        
         var arrayM = [UIViewController]()
         for dict in array {
           
-            arrayM.append(controller(dict: dict))
+            arrayM.append(controller(dict: dict as [String : AnyObject]))
         }
         viewControllers =  arrayM
     }
     
     
     
-  fileprivate  func controller(dict: [String: String]) -> UIViewController
-     {
+  fileprivate  func controller(dict: [String: AnyObject]) -> UIViewController
+    
+  {
 
-        guard let   clsName =  dict["clsName"],
-              let   title =  dict["title"],
-              let   imageName  =  dict["imageName"],
-              let   cls = NSClassFromString (Bundle.main.namespace + "." + clsName) as?           UIViewController.Type
+        guard let   clsName =  dict["clsName"] as? String ,
+              let   title =  dict["title"] as? String ,
+              let   imageName  =  dict["imageName"] as? String,
+              let   cls = NSClassFromString (Bundle.main.namespace + "." + clsName) as?           WBBaseViewController.Type,
+    let visitorDict = dict["visitorInfo"] as? [String: String]
+    
             else{
                    // 存在值为nil的内容
                      return  UIViewController()
                }
       
-//         let cls = UIViewController.self   //当初测试所用
+        
         // 1》创建视图控制器
         let vc = cls.init()
+    
+    
         //标题的读取
         vc.title = title
+    
+        // 访客视图的字典赋值
+        vc.visitorInfoOut = visitorDict
+    
+    
         //图片的读取
         vc.tabBarItem.image = UIImage(named: "tabbar_" + imageName )
         vc.tabBarItem.selectedImage = UIImage(named: "tabbar_" + imageName + "_highlighted" )?.withRenderingMode(.alwaysOriginal)
@@ -121,20 +150,4 @@ extension  WBMainViewController {
 
 
 
-//    override func didReceiveMemoryWarning() {
-//        super.didReceiveMemoryWarning()
-//        // Dispose of any resources that can be recreated.
-//    }
-//    
-//
-//    /*
-//    // MARK: - Navigation
-//
-//    // In a storyboard-based application, you will often want to do a little preparation before navigation
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        // Get the new view controller using segue.destinationViewController.
-//        // Pass the selected object to the new view controller.
-//    }
-//    */
-//
 
