@@ -93,7 +93,7 @@ extension  WBMainViewController {
        "visitorInfo": [ "imageName": "visitordiscover_image_message",  "message": "登录后，最新，最热微博尽在掌握，不再会与事实潮流插肩而过"]],
       
       ["clsName": "WBProfileViewController","title": "我","imageName": "profile",
-       "visitorInfo": [ "imageName": "visitordiscover_image_profile",  "message": "登录后，你的信息风采展现给别人"]]
+       "visitorInfo": [ "imageName": "visitordiscover_image_profile",  "message": "登录后，你的微博，相册，个人资料会显示在这里，展现给别人"]]
             
             
         ]

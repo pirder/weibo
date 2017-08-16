@@ -36,6 +36,7 @@ class WBVisitorVIew: UIView {
             //首页为空不需要传值进来
             
             if imageName == "" {
+                startAnimation()
                 return
             }
             iconView.image = UIImage(named: imageName)
@@ -60,6 +61,28 @@ class WBVisitorVIew: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    
+    
+    // 旋转动画
+    fileprivate func startAnimation(){
+     
+       
+        //创建旋转动画
+        // 忘记后可以回到http://blog.csdn.net/feng2qing/article/details/51289818
+        let animation = CABasicAnimation(keyPath: "transform.rotation" )
+        
+        animation.toValue = 2 * Double.pi
+        animation.repeatCount = MAXFLOAT
+        animation.duration = 15
+        
+        // 动画完成不关闭
+        animation.isRemovedOnCompletion = false
+        
+        //添加到图层
+        iconView.layer.add(animation, forKey: nil)
+    
+    
+    }
   
     
     //图像视图
@@ -68,7 +91,7 @@ class WBVisitorVIew: UIView {
     //背景动画
   fileprivate lazy var houseIconView = UIImageView(image: UIImage(named: "visitordiscover_feed_image_house"))
     //标签
-   fileprivate lazy var tipLabel = UILabel(title: "关注一些人，回来这里看看有什么惊喜", fontsize: 15, color: UIColor.darkGray)
+   fileprivate lazy var tipLabel = UILabel(title: "关注一些人，回来这里看看有什么惊喜", fontsize: 15, color: UIColor.brown)
     
     
     //注册按钮
