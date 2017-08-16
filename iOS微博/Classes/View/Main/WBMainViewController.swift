@@ -99,13 +99,27 @@ extension  WBMainViewController {
         ]
         
         
+        
+        
+        
         var arrayM = [UIViewController]()
         for dict in array {
           
             arrayM.append(controller(dict: dict as [String : AnyObject]))
         }
         viewControllers =  arrayM
+        
+        
+        // 转化json
+        let da = try! JSONSerialization.data(withJSONObject: array, options: [.prettyPrinted])
+        
+        (da as NSData).write(toFile: "/Users/pirders/Documents/myarray.json", atomically: true)
+        
+        
+        
     }
+    
+    
     
     
     
