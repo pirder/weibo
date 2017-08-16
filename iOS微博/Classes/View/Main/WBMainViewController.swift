@@ -73,9 +73,17 @@ extension  WBMainViewController {
     //设置子控制器
   fileprivate func  setupChildControllers()
     {
-        // 能够通过网络json 获取到
+         
         
-        /// clsName,title,imageName,visitorInfo
+//        let path = Bundle.main.path(forResource:"myarray",
+//                                   ofType: "json")
+//       
+////        let url = URL(fileURLWithPath: path!)
+//        let data = NSData(contentsOfFile: path!)
+//        let array = try? JSONSerialization.jsonObject(with: data! as Data, options: []) as? [String : AnyObject]
+//        
+//         能够通过网络json 获取到
+//        / clsName,title,imageName,visitorInfo
         let array =  [
             
         ["clsName": "WBHomeViewController","title": "首页","imageName": "home",
@@ -105,15 +113,15 @@ extension  WBMainViewController {
         var arrayM = [UIViewController]()
         for dict in array {
           
-            arrayM.append(controller(dict: dict as [String : AnyObject]))
+            arrayM.append(controller(dict: dict as [String : AnyObject] ))
         }
         viewControllers =  arrayM
         
         
         // 转化json
-        let da = try! JSONSerialization.data(withJSONObject: array, options: [.prettyPrinted])
-        
-        (da as NSData).write(toFile: "/Users/pirders/Documents/myarray.json", atomically: true)
+//        let da = try! JSONSerialization.data(withJSONObject: array, options: [.prettyPrinted])
+//        
+//        (da as NSData).write(toFile: "/Users/pirders/Documents/myarray.json", atomically: true)
         
         
         
