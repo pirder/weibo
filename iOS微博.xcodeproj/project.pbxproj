@@ -25,6 +25,7 @@
 		2D42FAE51F432553000E4239 /* UIimage+UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D42FAE41F432553000E4239 /* UIimage+UIButton+Extensions.swift */; };
 		2D4437521F449941008B5A8D /* locat.json in Resources */ = {isa = PBXBuildFile; fileRef = 2D4437511F449941008B5A8D /* locat.json */; };
 		2D4437541F449C5D008B5A8D /* newarray.json in Resources */ = {isa = PBXBuildFile; fileRef = 2D4437531F449C5D008B5A8D /* newarray.json */; };
+		2D4437561F44AFA9008B5A8D /* myarray.json in Resources */ = {isa = PBXBuildFile; fileRef = 2D4437551F44AFA9008B5A8D /* myarray.json */; };
 		2D4F697D1F408A01007A6869 /* tabbar_compose_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D4F697B1F408A01007A6869 /* tabbar_compose_button@2x.png */; };
 		2D4F697E1F408A01007A6869 /* tabbar_compose_button@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D4F697C1F408A01007A6869 /* tabbar_compose_button@3x.png */; };
 /* End PBXBuildFile section */
@@ -71,6 +72,7 @@
 		2D42FAE41F432553000E4239 /* UIimage+UIButton+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIimage+UIButton+Extensions.swift"; sourceTree = "<group>"; };
 		2D4437511F449941008B5A8D /* locat.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = locat.json; path = VisitorView/locat.json; sourceTree = "<group>"; };
 		2D4437531F449C5D008B5A8D /* newarray.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = newarray.json; path = ../newarray.json; sourceTree = "<group>"; };
+		2D4437551F44AFA9008B5A8D /* myarray.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = myarray.json; sourceTree = "<group>"; };
 		2D4F697B1F408A01007A6869 /* tabbar_compose_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tabbar_compose_button@2x.png"; path = "iOS微博/Assets.xcassets/TabBar/tabbar_compose_button.imageset/tabbar_compose_button@2x.png"; sourceTree = "<group>"; };
 		2D4F697C1F408A01007A6869 /* tabbar_compose_button@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tabbar_compose_button@3x.png"; path = "iOS微博/Assets.xcassets/TabBar/tabbar_compose_button.imageset/tabbar_compose_button@3x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -242,6 +244,7 @@
 		2D3D90331F42C962006DF262 /* 主控制器 */ = {
 			isa = PBXGroup;
 			children = (
+				2D4437551F44AFA9008B5A8D /* myarray.json */,
 				2D4437531F449C5D008B5A8D /* newarray.json */,
 				2D4437511F449941008B5A8D /* locat.json */,
 				2D02BCC21F3DB55E0045AE7B /* WBMainViewController.swift */,
@@ -390,6 +393,7 @@
 				2D4F697E1F408A01007A6869 /* tabbar_compose_button@3x.png in Resources */,
 				2D02BC921F3DAA820045AE7B /* Assets.xcassets in Resources */,
 				2D4F697D1F408A01007A6869 /* tabbar_compose_button@2x.png in Resources */,
+				2D4437561F44AFA9008B5A8D /* myarray.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

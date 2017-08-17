@@ -26,8 +26,41 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
            // window可见
             
              window?.makeKeyAndVisible()
+            
+            loadappInfo()
             return true
            }
 
 }
 
+
+// MARK: - 从服务器加载json。只是模拟过程
+
+extension AppDelegate{
+
+  fileprivate func loadappInfo()
+  {
+    DispatchQueue.global().async {
+        
+        // 获取   url
+        let url = Bundle.main.url(forResource: "myarray.json", withExtension: nil)
+        
+        //  data
+        let data = NSData(contentsOf: url!)
+        
+        // 写入数据
+        
+        let disdor = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
+        
+        let jsonpath = (disdor as NSString).appendingPathComponent("netlocat.json")
+        
+        data?.write(toFile: jsonpath, atomically: true)
+        
+        print("加载应用完成\(jsonpath) ") 
+    }
+    
+    
+    
+    }
+
+}

@@ -73,17 +73,31 @@ extension  WBMainViewController {
     //设置子控制器
   fileprivate func  setupChildControllers()
     {
-         
         
-         let path = Bundle.main.path(forResource: "newarray.json", ofType: nil)
-         let data = NSData(contentsOfFile: path!)
-    
+        // 从沙盒中访问json  //可随时更新
+        
+        let disdor = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
+        
+        let jsonpath = (disdor as NSString).appendingPathComponent("netlocat.json")
+        
+        var data = NSData(contentsOfFile: jsonpath)
+        
+        if data == nil {
+        
+            let path = Bundle.main.path(forResource: "newarray.json", ofType: nil)
+             data = NSData(contentsOfFile: path!)
+
+        
+        }
+        
+        
+        
         guard let array = try? JSONSerialization.jsonObject(with: data! as Data, options: []) as? [[String: AnyObject]]
             else {
                 return
         }
         
-        // 遍历数组，不断创建控制器数组
+        // 遍历数组，不断创建控制器数组  ／／用json
         var arrayM = [UIViewController]()
         
         
@@ -94,14 +108,6 @@ extension  WBMainViewController {
         
         //  设置给子控制器
         viewControllers =  arrayM
-        
-        
-//        // 转化json
-//        let da = try! JSONSerialization.data(withJSONObject: array, options: [.prettyPrinted])
-//        
-//        (da as NSData).write(toFile: "/Users/pirders/Documents/newarray.json", atomically: true)
-//        
-        
         
     }
     
