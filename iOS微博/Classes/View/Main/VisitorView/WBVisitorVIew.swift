@@ -114,6 +114,7 @@ class WBVisitorVIew: UIView {
 extension WBVisitorVIew {
   
     func setupUI(){
+        
     // 16 进制的颜色处理//
     backgroundColor = UIColor(valueRGB: 0xEDEDED)
         

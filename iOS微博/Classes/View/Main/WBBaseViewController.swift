@@ -159,6 +159,10 @@ extension WBBaseViewController  {
         
         view.addSubview(navigationBar)
         
+        // 导航栏的背景颜色
+        navigationBar.barTintColor = UIColor(valueRGB: 0xF6F6F6)
+        // 访客视图的导航栏按钮颜色按钮
+        navigationBar.tintColor = UIColor.orange
         // 添加导航栏标题
         navigationBar.items = [natitem]
         // 导航栏字体颜色
