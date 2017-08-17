@@ -35,9 +35,10 @@ class WBDemoViewController: WBBaseViewController {
 
 extension WBDemoViewController{
     // 重写父类方法
-    override func setupUI() {
+    override func setupTableView() {
         
-        super.setupUI()
+        
+        super.setupTableView()
         
        natitem.rightBarButtonItem = UIBarButtonItem(title: "下一个", target: self,
                                                            action: #selector(shouNext))

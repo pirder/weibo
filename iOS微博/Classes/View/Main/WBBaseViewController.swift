@@ -13,10 +13,10 @@ class WBBaseViewController: UIViewController {
     // 用户登录与否
     var userLogon = false
     
-    // 访客视图的字典信息，等待外部传进来，然后再传给里面
+    // 访客视图的字典信息，等待外部传进来，然后再传给里面  代理
     var visitorInfoOut: [String: String]?
     
-    // 表格视图 ／可选，登陆与否
+    // 表格视图 ／可选，登陆与否    代理
     var tableView: UITableView?
     
     // 刷新控件
@@ -74,7 +74,7 @@ extension WBBaseViewController{
     // 若没有设置背景颜色，push时候会卡顿
 extension WBBaseViewController  {
 
-         func setupUI(){
+        fileprivate func setupUI(){
         print("setupUI")
         
         // 设置背景颜色
@@ -98,7 +98,7 @@ extension WBBaseViewController  {
     
     //设置表格视图-----
     
-    fileprivate func setupTableView(){
+     func setupTableView(){
     
         // 表格处理
     tableView = UITableView(frame: view.bounds, style: .plain)
@@ -146,6 +146,10 @@ extension WBBaseViewController  {
         //添加按钮监听方法
         vistorview.loginButton.addTarget(self, action: #selector(loginbtn), for: .touchUpInside)
         vistorview.registerButton.addTarget(self, action: #selector(resignterbtn), for: .touchUpInside)
+        
+        // 注册登录barbutton
+        natitem.leftBarButtonItem = UIBarButtonItem(title: "注册", style: .plain, target: self, action: #selector(resignterbtn))
+        natitem.rightBarButtonItem = UIBarButtonItem(title: "登录", style: .plain, target: self, action: #selector(loginbtn))
         
     }
     // 导航------

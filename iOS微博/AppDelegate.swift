@@ -56,7 +56,7 @@ extension AppDelegate{
         
         data?.write(toFile: jsonpath, atomically: true)
         
-        print("加载应用完成\(jsonpath) ") 
+        print("加载应用完成")
     }
     
     

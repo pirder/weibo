@@ -29,7 +29,7 @@ class WBVisitorVIew: UIView {
     
     
     
-    // 访客视图的信息字典  / imagename / message
+    // 访客视图的信息字典  / imagename / 
     var visitorInfo: [String: String]? {
         
         didSet{

@@ -99,8 +99,9 @@ extension WBHomeViewController{
 // 设置界面
 extension WBHomeViewController{
    // 重写父类
-    override func setupUI() {
-        super.setupUI()
+    override func setupTableView() {
+       
+        super.setupTableView()
         print("重写setupui")
        //设置导航栏按钮
 
