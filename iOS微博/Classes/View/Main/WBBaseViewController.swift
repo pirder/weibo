@@ -54,15 +54,27 @@ class WBBaseViewController: UIViewController {
      }
 
 }
+   /// 访客视图按钮监听
+
+extension WBBaseViewController{
+   
+   @objc func loginbtn(){
+        print("用户登录")
+    }
+ 
+    @objc func resignterbtn(){
+    
+      print("用户注册")
+    }
+}
+
+
 
      // 设置 界面
     // 若没有设置背景颜色，push时候会卡顿
 extension WBBaseViewController  {
 
-    
-   
-    
-     func setupUI(){
+         func setupUI(){
         print("setupUI")
         
         // 设置背景颜色
@@ -130,6 +142,10 @@ extension WBBaseViewController  {
         
         // 访客视图外部赋值进来 在这里无用，只是一个传值进来给WBvisitor 用的
         vistorview.visitorInfo = visitorInfoOut
+        
+        //添加按钮监听方法
+        vistorview.loginButton.addTarget(self, action: #selector(loginbtn), for: .touchUpInside)
+        vistorview.registerButton.addTarget(self, action: #selector(resignterbtn), for: .touchUpInside)
         
     }
     // 导航------

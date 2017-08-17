@@ -8,12 +8,23 @@
 
 import UIKit
 
-
-
-
-
-
 class WBVisitorVIew: UIView {
+    
+    
+    //注册按钮
+     lazy var registerButton: UIButton = UIButton(title: "注册",
+                                                  fontsize: 18,
+                                                  normalColor: UIColor.orange,
+                                                  highlighColor: UIColor.darkGray,
+                                                  image: "common_button_white_disable")
+    
+    
+    
+    //登录按钮
+     lazy var loginButton: UIButton = UIButton(title: "登录", fontsize: 18,
+                                               normalColor: UIColor.darkGray,
+                                               highlighColor: UIColor.black,
+                                               image: "common_button_white_disable")
     
     
     
@@ -84,7 +95,7 @@ class WBVisitorVIew: UIView {
     
     }
   
-    
+    // 私有的控件
     //图像视图
     fileprivate lazy var iconView = UIImageView(image: UIImage(named: "visitordiscover_feed_image_smallicon"))
     
@@ -94,13 +105,7 @@ class WBVisitorVIew: UIView {
    fileprivate lazy var tipLabel = UILabel(title: "关注一些人，回来这里看看有什么惊喜", fontsize: 15, color: UIColor.brown)
     
     
-    //注册按钮
-    fileprivate lazy var registerButton: UIButton = UIButton(title: "注册", fontsize: 18, normalColor: UIColor.orange, highlighColor: UIColor.darkGray,image: "common_button_white_disable")
-   
-
     
-    //登录按钮
-   fileprivate lazy var loginButton: UIButton = UIButton(title: "登录", fontsize: 18, normalColor: UIColor.darkGray, highlighColor: UIColor.black,image: "common_button_white_disable")
     
 }
 
