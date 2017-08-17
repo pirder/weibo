@@ -28,6 +28,7 @@
 		2D4437561F44AFA9008B5A8D /* myarray.json in Resources */ = {isa = PBXBuildFile; fileRef = 2D4437551F44AFA9008B5A8D /* myarray.json */; };
 		2D4F697D1F408A01007A6869 /* tabbar_compose_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D4F697B1F408A01007A6869 /* tabbar_compose_button@2x.png */; };
 		2D4F697E1F408A01007A6869 /* tabbar_compose_button@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D4F697C1F408A01007A6869 /* tabbar_compose_button@3x.png */; };
+		2D8B58241F45F75000E2371F /* WBNetworkMenage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8B58231F45F75000E2371F /* WBNetworkMenage.swift */; };
 		4B279808FAC47FDED39B3D7C /* Pods_iOS__.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F9A8A235567502CB2039D74 /* Pods_iOS__.framework */; };
 /* End PBXBuildFile section */
 
@@ -76,6 +77,7 @@
 		2D4437551F44AFA9008B5A8D /* myarray.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = myarray.json; sourceTree = "<group>"; };
 		2D4F697B1F408A01007A6869 /* tabbar_compose_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tabbar_compose_button@2x.png"; path = "iOS微博/Assets.xcassets/TabBar/tabbar_compose_button.imageset/tabbar_compose_button@2x.png"; sourceTree = "<group>"; };
 		2D4F697C1F408A01007A6869 /* tabbar_compose_button@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tabbar_compose_button@3x.png"; path = "iOS微博/Assets.xcassets/TabBar/tabbar_compose_button.imageset/tabbar_compose_button@3x.png"; sourceTree = "<group>"; };
+		2D8B58231F45F75000E2371F /* WBNetworkMenage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBNetworkMenage.swift; sourceTree = "<group>"; };
 		3F9A8A235567502CB2039D74 /* Pods_iOS__.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS__.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A423E274154E474BC14C5B6 /* Pods-iOS微博.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS微博.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOS微博/Pods-iOS微博.debug.xcconfig"; sourceTree = "<group>"; };
 		89EB7C0B0B8C76927F8B95BB /* Pods-iOS微博.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS微博.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOS微博/Pods-iOS微博.release.xcconfig"; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 		2D02BCBA1F3DB4810045AE7B /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				2D8B58221F45F6EB00E2371F /* Network */,
 				2D4278211F3F6D180080A9F3 /* Extensions */,
 			);
 			path = Tools;
@@ -284,6 +287,14 @@
 				2D42FAE21F4322B7000E4239 /* WBVisitorVIew.swift */,
 			);
 			path = VisitorView;
+			sourceTree = "<group>";
+		};
+		2D8B58221F45F6EB00E2371F /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				2D8B58231F45F75000E2371F /* WBNetworkMenage.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		79EB120EB8A032EC8A90145A /* Pods */ = {
@@ -521,6 +532,7 @@
 				2D42FAE51F432553000E4239 /* UIimage+UIButton+Extensions.swift in Sources */,
 				2D02BC8B1F3DAA820045AE7B /* AppDelegate.swift in Sources */,
 				2D02BCC51F3DB5B30045AE7B /* WBNavigationController.swift in Sources */,
+				2D8B58241F45F75000E2371F /* WBNetworkMenage.swift in Sources */,
 				2D02BCCD1F3DB77E0045AE7B /* WBMessageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
