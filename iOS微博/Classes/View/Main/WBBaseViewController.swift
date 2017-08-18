@@ -11,7 +11,7 @@ import UIKit
 class WBBaseViewController: UIViewController {
     
     // 用户登录与否
-    var userLogon = false
+    var userLogon = true
     
     // 访客视图的字典信息，等待外部传进来，然后再传给里面  代理
     var visitorInfoOut: [String: String]?

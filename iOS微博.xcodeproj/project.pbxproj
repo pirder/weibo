@@ -18,6 +18,7 @@
 		2D02BCCD1F3DB77E0045AE7B /* WBMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D02BCCC1F3DB77E0045AE7B /* WBMessageViewController.swift */; };
 		2D02BCCF1F3DB7900045AE7B /* WBDiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D02BCCE1F3DB7900045AE7B /* WBDiscoverViewController.swift */; };
 		2D02BCD11F3DB7AA0045AE7B /* WBProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D02BCD01F3DB7AA0045AE7B /* WBProfileViewController.swift */; };
+		2D1B50DC1F473160008C5362 /* WBNetworkMenage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1B50DB1F47315F008C5362 /* WBNetworkMenage+Extensions.swift */; };
 		2D422A271F41A630004FA1A9 /* WBDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D422A261F41A630004FA1A9 /* WBDemoViewController.swift */; };
 		2D422A291F41D47F004FA1A9 /* UIBarButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D422A281F41D47F004FA1A9 /* UIBarButton+Extensions.swift */; };
 		2D4278231F3F6D8B0080A9F3 /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4278221F3F6D8B0080A9F3 /* Bundle+Extensions.swift */; };
@@ -67,6 +68,7 @@
 		2D02BCCC1F3DB77E0045AE7B /* WBMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBMessageViewController.swift; sourceTree = "<group>"; };
 		2D02BCCE1F3DB7900045AE7B /* WBDiscoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBDiscoverViewController.swift; sourceTree = "<group>"; };
 		2D02BCD01F3DB7AA0045AE7B /* WBProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBProfileViewController.swift; sourceTree = "<group>"; };
+		2D1B50DB1F47315F008C5362 /* WBNetworkMenage+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WBNetworkMenage+Extensions.swift"; sourceTree = "<group>"; };
 		2D422A261F41A630004FA1A9 /* WBDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBDemoViewController.swift; sourceTree = "<group>"; };
 		2D422A281F41D47F004FA1A9 /* UIBarButton+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButton+Extensions.swift"; sourceTree = "<group>"; };
 		2D4278221F3F6D8B0080A9F3 /* Bundle+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Extensions.swift"; sourceTree = "<group>"; };
@@ -293,6 +295,7 @@
 			isa = PBXGroup;
 			children = (
 				2D8B58231F45F75000E2371F /* WBNetworkMenage.swift */,
+				2D1B50DB1F47315F008C5362 /* WBNetworkMenage+Extensions.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -524,6 +527,7 @@
 				2D02BCD11F3DB7AA0045AE7B /* WBProfileViewController.swift in Sources */,
 				2D422A271F41A630004FA1A9 /* WBDemoViewController.swift in Sources */,
 				2D02BCCF1F3DB7900045AE7B /* WBDiscoverViewController.swift in Sources */,
+				2D1B50DC1F473160008C5362 /* WBNetworkMenage+Extensions.swift in Sources */,
 				2D4278231F3F6D8B0080A9F3 /* Bundle+Extensions.swift in Sources */,
 				2D422A291F41D47F004FA1A9 /* UIBarButton+Extensions.swift in Sources */,
 				2D42FAE31F4322B7000E4239 /* WBVisitorVIew.swift in Sources */,

@@ -26,9 +26,17 @@ class WBHomeViewController: WBBaseViewController {
     }
     
     override func loadDate() {
+        //  网络管理 加载微博数据
         
-      // 模拟延时加载
+        WBNetworkMenage.shared.statusList { (List, iscuccess) in
+            
+            // 字典，绑定表格数据
+            print(List)
+        }
         
+        
+        
+        // 模拟延时加载
         print("开始加载数据")
         // 尾随闭包
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()  ) {
