@@ -15,17 +15,19 @@ extension WBNetworkMenage {
     
     
     func statusList(completion: @escaping (_ List: [[String: AnyObject]]?,_ isSuccess: Bool)->()) {
-        //func statusList(completion: ()->()) {
 
         let urlstr = "https://api.weibo.com/2/statuses/home_timeline.json"
-        let parsm = ["access_token": "2.00ieZlUGFJN6sB5fa251acd6WZhpsB"]
         
-        request(HTTPrequest: .GET, URLSting: urlstr, parameters: parsm as [String : AnyObject]) { (json, issuccess) in
+        tokenRequest(HTTPrequest: .GET, URLSting: urlstr, parameters: nil) { (json, issuccess) in
             
             
-          //  print(json)
+            
+            
+            
+            //隔离数据
             let result = json?["statuses"] as? [[String: AnyObject]]
-          //  let result = json["statuses"] as? [[String: AnyObject]]
+            
+            
             completion(result, issuccess)
     
         }
