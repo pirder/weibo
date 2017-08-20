@@ -14,10 +14,7 @@ enum WBHTTPrequest {
     case GET
     case POST
 }
-
-
-
-//网络管理
+    //网络管理
 class WBNetworkMenage: AFHTTPSessionManager {
 
    ///静态区域 ／常量／闭包
@@ -33,6 +30,9 @@ class WBNetworkMenage: AFHTTPSessionManager {
         // 如果token为空 下面都不执行，没有登录
         
         guard let tokenIn = tokenOut else {
+            
+            
+            // FIXME: 通知，没有token 没有登录
             print("没有token 没有登录")
             
             completion(nil, false)
@@ -90,6 +90,12 @@ class WBNetworkMenage: AFHTTPSessionManager {
     }
     
         let failure = { (taTask: URLSessionDataTask?,error: Error ) -> () in
+            
+            // FIXME: 通知：                print("token登录过期")
+            if (taTask?.response as? HTTPURLResponse)?.statusCode == 403 {
+                print("token登录过期")
+            }
+            
             
            print("网络错误\(error)")
             completion( nil, false)// issuccess回调
