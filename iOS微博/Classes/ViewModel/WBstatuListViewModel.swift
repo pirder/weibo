@@ -24,20 +24,18 @@ class WBstatuListViewModel {
     func loadStatus(completion: @escaping (_ isSuccess: Bool) -> ())  {
         
         WBNetworkMenage.shared.statusList { (List, isSuccess) in
-            
+              
             // 字典转模型
-          guard  let array = NSArray.yy_modelArray(with: WBstutas.self, json: List ?? "") as? [WBstutas]
-            
+          guard  let array = NSArray.yy_modelArray(with: WBstutas.self, json: List ?? "")
+            as? [WBstutas]
+           
             else{
-            
                 completion(isSuccess)
-            return
+                return
             }
             
-            
             // 拼接数据
-            
-            self.status +=  array
+            self.status += array
             
             // 完成回调
             completion(isSuccess)

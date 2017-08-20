@@ -14,6 +14,8 @@ import UIKit
 
 class WBHomeViewController: WBBaseViewController {
 
+    fileprivate lazy var  listViewModel = WBstatuListViewModel()
+    
     
     fileprivate lazy var statusList = [String]()
     override func viewDidLoad() {
@@ -26,45 +28,60 @@ class WBHomeViewController: WBBaseViewController {
     }
     
     override func loadDate() {
+        
         //  网络管理 加载微博数据
         
-        WBNetworkMenage.shared.statusList { (List, iscuccess) in
-            
-            // 字典，绑定表格数据
-            print(List)
+       listViewModel.loadStatus { (isSuccess) in
+        
+             print("加载数据完成")
+           print("加载数据")
+        // 结束下拉刷新控件
+        self.refreshControlloer?.endRefreshing()
+        
+        // 把ispullup 恢复 false
+        self.isPullup = false
+        
+        //  刷新加载表格
+        self.tableView?.reloadData()
         }
+
+        
+}
+    
+    
+        
         
         
         
         // 模拟延时加载
-        print("开始加载数据")
-        // 尾随闭包
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()  ) {
-            for i in 0..<15 {
-                
-                if self.isPullup {
-                
-                   //上拉 在底部加入数据
-                    self.statusList.append("上拉记载的数据 \(i)")
-                  }
-                else{
-                    
-                self.statusList.insert(i.description, at: 0)
-                    
-                    }
-            }
-            
-       print("加载数据")
-           // 结束下拉刷新控件
-            self.refreshControlloer?.endRefreshing()
-            
-            // 把ispullup 恢复 false
-            self.isPullup = false
-            
-            //  刷新加载表格
-            self.tableView?.reloadData()
-        }
-    }
+       // print("开始加载数据")
+//        // 尾随闭包
+//        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()  ) {
+//            for i in 0..<15 {
+//                
+//                if self.isPullup {
+//                
+//                   //上拉 在底部加入数据
+//                    self.statusList.append("上拉记载的数据 \(i)")
+//                  }
+//                else{
+//                    
+//                self.statusList.insert(i.description, at: 0)
+//                    
+//                    }
+//            }
+//            
+//       print("加载数据")
+//           // 结束下拉刷新控件
+//            self.refreshControlloer?.endRefreshing()
+//            
+//            // 把ispullup 恢复 false
+//            self.isPullup = false
+//            
+//            //  刷新加载表格
+//            self.tableView?.reloadData()
+    
+    
     
     
     // 显示好友
@@ -83,7 +100,7 @@ class WBHomeViewController: WBBaseViewController {
 extension WBHomeViewController{
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return statusList.count
+        return listViewModel.status.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -92,7 +109,7 @@ extension WBHomeViewController{
         
         // 2,设置cell
         
-          cell.textLabel?.text = statusList[indexPath.row]
+          cell.textLabel?.text = listViewModel.status[indexPath.row].text
         
         // 3,返回cell
         return cell
