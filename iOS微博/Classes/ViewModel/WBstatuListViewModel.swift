@@ -23,24 +23,30 @@ class WBstatuListViewModel {
     /// - Parameter completion: 完成回调【是否成功】
     func loadStatus(completion: @escaping (_ isSuccess: Bool) -> ())  {
         
-        WBNetworkMenage.shared.statusList { (List, isSuccess) in
-              
+        let since_id = status.first?.id ?? 0
+        
+        WBNetworkMenage.shared.statusList(since_id: since_id, max_id: 0) { (List, isSuccess) in
+            
             // 字典转模型
-          guard  let array = NSArray.yy_modelArray(with: WBstutas.self, json: List ?? "")
-            as? [WBstutas]
-           
-            else{
-                completion(isSuccess)
-                return
+            guard  let array = NSArray.yy_modelArray(with: WBstutas.self, json: List ?? "")
+                as? [WBstutas]
+                
+                else{
+                    completion(isSuccess)
+                    return
             }
             
+            print("刷新条数\(array.count)")
             // 拼接数据
-            self.status += array
+            self.status = array +  self.status
             
             // 完成回调
             completion(isSuccess)
 
-            
         }
+              
+        
+            
+        
     }
 }

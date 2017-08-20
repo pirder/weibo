@@ -31,7 +31,7 @@ class WBHomeViewController: WBBaseViewController {
         
         //  网络管理 加载微博数据
         
-       listViewModel.loadStatus { (isSuccess) in
+       listViewModel.loadStatus{ (isSuccess) in
         
              print("加载数据完成")
            print("加载数据")

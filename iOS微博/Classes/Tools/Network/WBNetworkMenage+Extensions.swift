@@ -9,16 +9,19 @@
 import Foundation
 
 
-// MARK: - 封装微博的网络请求
+
+// MARK: -  - 封装微博的网络请求
 extension WBNetworkMenage {
 
     
     
-    func statusList(completion: @escaping (_ List: [[String: AnyObject]]?,_ isSuccess: Bool)->()) {
+    func statusList(since_id: Int64 = 0 ,max_id: Int64 = 0 ,completion: @escaping (_ List: [[String: AnyObject]]?,_ isSuccess: Bool)->()) {
 
         let urlstr = "https://api.weibo.com/2/statuses/home_timeline.json"
         
-        tokenRequest(HTTPrequest: .GET, URLSting: urlstr, parameters: nil) { (json, issuccess) in
+        let parameter = ["since_id": "\(since_id)",
+                         "max_id": "\(max_id)"]
+        tokenRequest(HTTPrequest: .GET, URLSting: urlstr, parameters: parameter as [String : AnyObject]) { (json, issuccess) in
             
             //隔离数据
             let result = json?["statuses"] as? [[String: AnyObject]]
