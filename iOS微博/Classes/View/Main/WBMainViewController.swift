@@ -76,7 +76,8 @@ extension WBMainViewController{
             
             self.tabBar.items?[0].badgeValue = count > 0 ? "\(count)" : nil
             
-            
+            //设置 app tabbaritem 的  badgenubmer  注意要用户授权
+            UIApplication.shared.applicationIconBadgeNumber = count
         }
 
     

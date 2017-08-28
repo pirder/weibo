@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,6 +16,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
  
         func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+            
+            //检测设备的系统版本，如果是10.0就用这个
+            if #available(iOS 10.0, *) {
+                UNUserNotificationCenter.current().requestAuthorization(options: [.alert,.badge,.carPlay,.sound]) { (success, error) in
+                    print("授权" + (success ? "成功": "失败")
+                }
+            } else {
+                //iOS 10.0 以下
+                //获得用户的授权通知（提示／声音／badgenumber）
+                let notifyfication = UIUserNotificationSettings(types: [.alert,.badge,.sound], categories: nil)
+                application.registerUserNotificationSettings(notifyfication)
+            }
+            
+            
      // 实例化 window
              window = UIWindow()
              window?.backgroundColor =  UIColor.white
