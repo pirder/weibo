@@ -22,9 +22,10 @@ class WBMainViewController: UITabBarController {
       
         setupChildControllers()
        setcomposeButton()
-    
-    setupTimer()
+        setupTimer()
         
+        //
+        delegate = self
     }
     
     
@@ -55,6 +56,45 @@ class WBMainViewController: UITabBarController {
     }
 
     fileprivate lazy var composeButton: UIButton = UIButton(type: .custom)
+}
+
+extension WBMainViewController: UITabBarControllerDelegate{
+    
+    
+    /// 将要选择tabBaritem
+    ///
+    /// - Parameters:
+    ///   - tabBarController: tabBarController description
+    ///   - viewController: 目标控制器
+    /// - Returns: 是否切换目标控制器
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+        
+        print("将要切换到\(viewController)")
+        // 获取控制器数组里的索引
+       let index = viewControllers?.index(of: viewController) as! Int
+//        let index = (childViewControllers as NSArray).index(of: viewController)
+        // 判断当前是否在首页，同时index还是首页
+        if index == 0 && index == selectedIndex {
+            print("点击首页")
+            
+            // 点击首页移到顶部
+            // 获取到控制器
+            let nav = childViewControllers[0] as! UINavigationController
+            let vc = nav.childViewControllers[0] as! WBHomeViewController
+            
+            //滚动到顶部
+            vc.tableView?.setContentOffset(CGPoint(x: 0 , y: -64), animated: true)
+            //刷新表格
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1 , execute: {
+                vc.loadDate()
+            })
+            
+            
+        }
+        
+        return  !viewController.isMember(of: UIViewController.self)
+    }
+
 }
 
 
@@ -110,7 +150,7 @@ extension  WBMainViewController {
         let w = tabBar.bounds.width / count
         let h = tabBar.bounds.height
       
-        //设置位置。
+        //设置位置 容错点
         composeButton.center = CGPoint(x: tabBar.center.x , y: tabBar.bounds.size.height * 0.5 )
        composeButton.bounds.size.height = h
         composeButton.bounds.size.width = w + 4

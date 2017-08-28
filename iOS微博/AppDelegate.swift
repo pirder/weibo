@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             //检测设备的系统版本，如果是10.0就用这个
             if #available(iOS 10.0, *) {
                 UNUserNotificationCenter.current().requestAuthorization(options: [.alert,.badge,.carPlay,.sound]) { (success, error) in
-                    print("授权" + (success ? "成功": "失败")
+                    print("授权" + (success ? "成功": "失败"))
                 }
             } else {
                 //iOS 10.0 以下
@@ -28,7 +28,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 let notifyfication = UIUserNotificationSettings(types: [.alert,.badge,.sound], categories: nil)
                 application.registerUserNotificationSettings(notifyfication)
             }
-            
             
      // 实例化 window
              window = UIWindow()
