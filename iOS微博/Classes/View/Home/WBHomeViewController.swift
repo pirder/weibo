@@ -31,7 +31,7 @@ class WBHomeViewController: WBBaseViewController {
         
         //  网络管理 加载微博数据
          print("加载数据完成\(self.listViewModel.status.last?.text ?? "没有数据刷新")")
-       listViewModel.loadStatus(pullup: self.isPullup){ (isSuccess) in
+       listViewModel.loadStatus(pullup: self.isPullup){ (isSuccess, shouldResfresh) in
         
         
            print("加载数据")
@@ -42,7 +42,9 @@ class WBHomeViewController: WBBaseViewController {
         self.isPullup = false
         
         //  刷新加载表格
+        if shouldResfresh {
         self.tableView?.reloadData()
+        }
         }
 
         

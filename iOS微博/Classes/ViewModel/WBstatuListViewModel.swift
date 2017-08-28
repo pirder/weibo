@@ -8,26 +8,29 @@
 
 import Foundation
 
-
-
-
+ fileprivate let   maxPullTimes = 3
 /// <#Description#>
 class WBstatuListViewModel {
     
     lazy var status = [WBstutas]()
     
-    
+    var PullErrorTimes = 0
     
     /// 加载微博列表
-    ///
-    /// - Parameter completion: 完成回调【是否成功】
-    /// <#Description#>
-    ///
+    
     /// - Parameters:
     ///   - pullup: 是否上拉刷新
     ///   - completion: 完成回调【是否成功】
-    func loadStatus(pullup: Bool ,completion: @escaping (_ isSuccess: Bool) -> ())  {
-//        取出最近一条微博的数据
+    func loadStatus(pullup: Bool ,completion: @escaping (_ isSuccess: Bool , _ shouldResfresh: Bool) -> ())  {
+
+        
+        if pullup && PullErrorTimes > maxPullTimes {
+        
+           completion(true, false)
+            return
+        }
+        
+        //        取出最近一条微博的数据
         let since_id = pullup ?  0 : (status.first?.id ?? 0)
         
 //        取出最后一条微博数据
@@ -40,7 +43,7 @@ class WBstatuListViewModel {
                 as? [WBstutas]
                 
                 else{
-                    completion(isSuccess)
+                    completion(isSuccess, false)
                     return
             }
             
@@ -57,8 +60,17 @@ class WBstatuListViewModel {
             // 拼接数据 最新的放在最上面
             self.status = array +  self.status
             }
+            // 判断数据上拉数据次数
+            if pullup && array.count == 0 {
+                
+                self.PullErrorTimes += 1
+                completion(isSuccess, false)
+            
+            }else {
+            
             // 完成回调
-            completion(isSuccess)
+            completion(isSuccess,true)
+            }
 
         }
               
