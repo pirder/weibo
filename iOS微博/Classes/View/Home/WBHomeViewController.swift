@@ -30,10 +30,10 @@ class WBHomeViewController: WBBaseViewController {
     override func loadDate() {
         
         //  网络管理 加载微博数据
+         print("加载数据完成\(self.listViewModel.status.last?.text ?? "没有数据刷新")")
+       listViewModel.loadStatus(pullup: self.isPullup){ (isSuccess) in
         
-       listViewModel.loadStatus{ (isSuccess) in
         
-             print("加载数据完成")
            print("加载数据")
         // 结束下拉刷新控件
         self.refreshControlloer?.endRefreshing()
