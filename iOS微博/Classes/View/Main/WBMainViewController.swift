@@ -10,6 +10,11 @@ import UIKit
 
 class WBMainViewController: UITabBarController {
 
+    //定时器
+    fileprivate var timer: Timer?
+    
+    
+    
     //主控制器
     
     override func viewDidLoad() {
@@ -17,17 +22,26 @@ class WBMainViewController: UITabBarController {
       
         setupChildControllers()
        setcomposeButton()
-        //测试未读数量
-        WBNetworkMenage.shared.unreadCount { (count) in
-            print("有\(count)条")
-        }
+    
+    setupTimer()
+        
     }
     
+    
+   
+    deinit {
+         // 销毁时钟
+       timer?.invalidate()
+    }
+    
+    
     /*  .portrait :竖屏
-      .landscape ：横屏
-       单独处理
+     .landscape ：横屏
+     单独处理
      在这里main设置之后，所有的子控制器都遵守此
-    */
+     */
+    
+    /// .portrait :竖屏
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask{
     return .portrait
      
@@ -42,6 +56,38 @@ class WBMainViewController: UITabBarController {
 
     fileprivate lazy var composeButton: UIButton = UIButton(type: .custom)
 }
+
+
+// MARK: - 时钟相关
+extension WBMainViewController{
+
+    fileprivate func setupTimer(){
+     //实例化时钟  // 刷新时间自己设置
+        timer = Timer.scheduledTimer(timeInterval: 60.0, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
+    }
+    
+    
+    /// 时钟调用方法
+    @objc fileprivate func updateTimer(){
+     
+        WBNetworkMenage.shared.unreadCount { (count) in
+            
+            //设置 首页tabbaritem 的  badgenubmer
+            
+            self.tabBar.items?[0].badgeValue = count > 0 ? "\(count)" : nil
+            
+            
+        }
+
+    
+    }
+
+}
+
+
+
+
+
 
 extension  WBMainViewController {
 
