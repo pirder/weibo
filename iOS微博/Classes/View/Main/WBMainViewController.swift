@@ -17,7 +17,10 @@ class WBMainViewController: UITabBarController {
       
         setupChildControllers()
        setcomposeButton()
-        
+        //测试未读数量
+        WBNetworkMenage.shared.unreadCount { (count) in
+            print("有\(count)条")
+        }
     }
     
     /*  .portrait :竖屏

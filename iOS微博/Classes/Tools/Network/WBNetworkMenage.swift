@@ -23,6 +23,8 @@ class WBNetworkMenage: AFHTTPSessionManager {
     // token令牌  
     var tokenOut: String? = "2.00ieZlUGFJN6sB5fa251acd6WZhpsB"
     
+    // 用户微博id
+    var uid: String? = "5951425552"
     func tokenRequest(HTTPrequest: WBHTTPrequest,URLSting: String,parameters: [String: AnyObject]?,completion:
         @escaping (_ json: AnyObject?,_ issuccess: Bool)->()) {
         

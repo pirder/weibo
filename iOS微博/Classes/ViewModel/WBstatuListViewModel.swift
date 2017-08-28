@@ -23,13 +23,14 @@ class WBstatuListViewModel {
     ///   - completion: 完成回调【是否成功】
     func loadStatus(pullup: Bool ,completion: @escaping (_ isSuccess: Bool , _ shouldResfresh: Bool) -> ())  {
 
+        //判断是否上拉刷新，同时检查一下刷新错误
         
         if pullup && PullErrorTimes > maxPullTimes {
         
            completion(true, false)
             return
         }
-        
+         
         //        取出最近一条微博的数据
         let since_id = pullup ?  0 : (status.first?.id ?? 0)
         
@@ -71,11 +72,6 @@ class WBstatuListViewModel {
             // 完成回调
             completion(isSuccess,true)
             }
-
         }
-              
-        
-            
-        
     }
 }
