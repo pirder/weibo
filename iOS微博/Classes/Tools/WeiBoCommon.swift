@@ -8,5 +8,13 @@
 
 import Foundation
 
+/// MARK: - 应用程序信息
+///应用程序id
+   let  WBAppKey = "1720063711"
+///应用程序回调地址
+let WBRedirectURI  = "http://baidu.com"
+
+/// 应用程序加密信息
+let  WBAppSecret =  "4535c0c7671f92f8776f5489474eb306"
 
 let WBuserShouldLoginNotification = "WBuserShouldLoginNotification"
