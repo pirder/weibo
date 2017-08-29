@@ -24,8 +24,11 @@ class WBMainViewController: UITabBarController {
        setcomposeButton()
         setupTimer()
         
-        //
+        //设置代理
         delegate = self
+       
+        //注册通知
+        NotificationCenter.default.addObserver(self, selector: #selector(userlogin), name: NSNotification.Name(rawValue: WBuserShouldLoginNotification), object: nil)
     }
     
     
@@ -33,6 +36,8 @@ class WBMainViewController: UITabBarController {
     deinit {
          // 销毁时钟
        timer?.invalidate()
+        
+        NotificationCenter.default.removeObserver(self)
     }
     
     
@@ -47,6 +52,13 @@ class WBMainViewController: UITabBarController {
     return .portrait
      
     }
+    
+    @objc fileprivate func userlogin(n: Notification){
+    
+        print("用户通知   \(n)")
+    
+    }
+    
     
     
     // 写微博

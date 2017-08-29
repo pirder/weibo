@@ -59,6 +59,8 @@ extension WBBaseViewController{
    
    @objc func loginbtn(){
         print("用户登录")
+    //发送通知
+    NotificationCenter.default.post(name: NSNotification.Name(rawValue: WBuserShouldLoginNotification), object: nil)
     }
  
     @objc func resignterbtn(){
