@@ -22,7 +22,7 @@ class WBOAuthViewController: UIViewController {
         title = "登录新浪微博"
         // 导航栏按钮
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "返回",target: self, action: #selector (close), isBack: true)
-        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "自动填充",target: self, action: #selector(antoFill), isBack: false)
         
     }
     override func viewDidLoad() {
@@ -55,5 +55,13 @@ class WBOAuthViewController: UIViewController {
     
         dismiss(animated: true, completion: nil)
     }
+    @objc fileprivate func antoFill(){
+    
+     let js =  "document.getElementById('userId').value = '13537003186';"  + "document.getElementById('passwd').value = 'ZHANGYUHUI56';"
+        
+        //执行js
+    webview.stringByEvaluatingJavaScript(from: js)
+    }
+
 
 }
