@@ -20,6 +20,7 @@
 		2D02BCD11F3DB7AA0045AE7B /* WBProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D02BCD01F3DB7AA0045AE7B /* WBProfileViewController.swift */; };
 		2D1B50DC1F473160008C5362 /* WBNetworkMenage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1B50DB1F47315F008C5362 /* WBNetworkMenage+Extensions.swift */; };
 		2D2AC3691F55607D00A3D60E /* WeiBoCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2AC3681F55607D00A3D60E /* WeiBoCommon.swift */; };
+		2D2AC36C1F55643E00A3D60E /* WBOAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2AC36B1F55643E00A3D60E /* WBOAuthViewController.swift */; };
 		2D422A271F41A630004FA1A9 /* WBDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D422A261F41A630004FA1A9 /* WBDemoViewController.swift */; };
 		2D422A291F41D47F004FA1A9 /* UIBarButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D422A281F41D47F004FA1A9 /* UIBarButton+Extensions.swift */; };
 		2D4278231F3F6D8B0080A9F3 /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4278221F3F6D8B0080A9F3 /* Bundle+Extensions.swift */; };
@@ -73,6 +74,7 @@
 		2D02BCD01F3DB7AA0045AE7B /* WBProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBProfileViewController.swift; sourceTree = "<group>"; };
 		2D1B50DB1F47315F008C5362 /* WBNetworkMenage+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WBNetworkMenage+Extensions.swift"; sourceTree = "<group>"; };
 		2D2AC3681F55607D00A3D60E /* WeiBoCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeiBoCommon.swift; sourceTree = "<group>"; };
+		2D2AC36B1F55643E00A3D60E /* WBOAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBOAuthViewController.swift; sourceTree = "<group>"; };
 		2D422A261F41A630004FA1A9 /* WBDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBDemoViewController.swift; sourceTree = "<group>"; };
 		2D422A281F41D47F004FA1A9 /* UIBarButton+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButton+Extensions.swift"; sourceTree = "<group>"; };
 		2D4278221F3F6D8B0080A9F3 /* Bundle+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Extensions.swift"; sourceTree = "<group>"; };
@@ -230,6 +232,7 @@
 		2D02BCBE1F3DB4810045AE7B /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				2D2AC36A1F55640100A3D60E /* OAuth */,
 				2D42FAE11F432253000E4239 /* VisitorView */,
 				2D422A251F41A5D0004FA1A9 /* 测试 */,
 				2D3D90331F42C962006DF262 /* 主控制器 */,
@@ -260,6 +263,14 @@
 				2DB3893D1F49E9D300088408 /* WBstatuListViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2D2AC36A1F55640100A3D60E /* OAuth */ = {
+			isa = PBXGroup;
+			children = (
+				2D2AC36B1F55643E00A3D60E /* WBOAuthViewController.swift */,
+			);
+			path = OAuth;
 			sourceTree = "<group>";
 		};
 		2D3D90331F42C962006DF262 /* 主控制器 */ = {
@@ -550,6 +561,7 @@
 				2D02BCC51F3DB5B30045AE7B /* WBNavigationController.swift in Sources */,
 				2D8B58241F45F75000E2371F /* WBNetworkMenage.swift in Sources */,
 				2D02BCCD1F3DB77E0045AE7B /* WBMessageViewController.swift in Sources */,
+				2D2AC36C1F55643E00A3D60E /* WBOAuthViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
