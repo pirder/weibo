@@ -76,6 +76,8 @@ extension WBNetworkMenage {
         
         print(self.userAccount)
         
+        //保存模型
+        self.userAccount.saveAccount()
         }
        
         

@@ -32,4 +32,21 @@ class WBUseracount: NSObject {
         return yy_modelDescription()
     
     }
+
+    func saveAccount()  {
+        
+        //1,模型转字典
+        var dict = (self.yy_modelToJSONObject() as? [String: AnyObject]) ?? [:]
+        
+        //删除无用的
+        dict.removeValue(forKey: "expires_in")
+        
+        // 字典反序列化
+        let data = try? JSONSerialization.data(withJSONObject: dict, options: [])
+        
+        let documentPaths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
+        print(documentPaths)
+    }
+    
+    
 }
