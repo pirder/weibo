@@ -8,6 +8,8 @@
 
 import UIKit
 
+//fileprivate let  accountFile: NSString = "useraccount.json"
+
 class WBUseracount: NSObject {
 
     //／令牌
@@ -33,6 +35,30 @@ class WBUseracount: NSObject {
     
     }
 
+    override init() {
+        
+        super.init()
+        
+        //从磁盘中取文件 ->字典
+        let documentPaths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
+        let filePath = documentPaths[0] + "/useraccount.json"
+
+       guard let data = NSData(contentsOfFile: filePath),
+        let dict = try? JSONSerialization.jsonObject(with: data as Data, options: []) as? [String: AnyObject]
+        
+        else
+       {
+        return
+        }
+        
+        
+        //使用字典属性
+        yy_modelSet(with: dict ?? [:])
+        
+        
+    }
+    
+    
     func saveAccount()  {
         
         //1,模型转字典
