@@ -16,7 +16,14 @@ class WBOAuthViewController: UIViewController {
     
     override func loadView() {
         view  = webview
+        
         view.backgroundColor  = UIColor.white
+        
+        //设置代理
+        webview.delegate = self
+        
+        
+        
         
         // 设置导航栏
         title = "登录新浪微博"
@@ -63,5 +70,30 @@ class WBOAuthViewController: UIViewController {
     webview.stringByEvaluatingJavaScript(from: js)
     }
 
+    
 
 }
+extension WBOAuthViewController: UIWebViewDelegate{
+
+
+    /// webview将要加载请求
+    ///
+    /// - Parameters:
+    ///   - webView: webview
+    ///   - request: 要加载的请求
+    ///   - navigationType: 导航类型
+    /// - Returns: 是否加载request
+    func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
+        
+        
+        //如果请求地址中含有www.baiu.com 不加载／加载页面
+        
+        print("加载请求 ---\(request.url?.absoluteString ?? "出现错误") ")
+        
+        // 如果有code= 授权成功，否则授权失败
+        return true
+    }
+
+}
+
+
