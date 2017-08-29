@@ -32,16 +32,10 @@ class WBNetworkMenage: AFHTTPSessionManager {
     
     }()//执行（）
     
-//    // token令牌  
-//    var tokenOut: String? // = "2.00ieZlUGFJN6sBb90c7fcfc1DP9BgB"
-//    
-//    // 用户微博id
-//    var uid: String? = "5951425552"
+
     
     //用户账户的懒加载
     lazy var userAccount = WBUseracount()
-    
-    
     
     
     var userLogon: Bool {
