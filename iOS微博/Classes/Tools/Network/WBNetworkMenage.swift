@@ -33,7 +33,7 @@ class WBNetworkMenage: AFHTTPSessionManager {
     }()//执行（）
     
     // token令牌  
-    var tokenOut: String? // = "2.00ieZlUGFJN6sB5fa251acd6WZhpsB"
+    var tokenOut: String? // = "2.00ieZlUGFJN6sBb90c7fcfc1DP9BgB"
     
     var userLogon: Bool {
     

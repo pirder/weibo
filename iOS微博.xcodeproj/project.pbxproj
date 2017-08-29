@@ -19,6 +19,7 @@
 		2D02BCCF1F3DB7900045AE7B /* WBDiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D02BCCE1F3DB7900045AE7B /* WBDiscoverViewController.swift */; };
 		2D02BCD11F3DB7AA0045AE7B /* WBProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D02BCD01F3DB7AA0045AE7B /* WBProfileViewController.swift */; };
 		2D1B50DC1F473160008C5362 /* WBNetworkMenage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1B50DB1F47315F008C5362 /* WBNetworkMenage+Extensions.swift */; };
+		2D28687A1F55C7EE005B17C2 /* WBUseracount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2868791F55C7EE005B17C2 /* WBUseracount.swift */; };
 		2D2AC3691F55607D00A3D60E /* WeiBoCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2AC3681F55607D00A3D60E /* WeiBoCommon.swift */; };
 		2D2AC36C1F55643E00A3D60E /* WBOAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2AC36B1F55643E00A3D60E /* WBOAuthViewController.swift */; };
 		2D422A271F41A630004FA1A9 /* WBDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D422A261F41A630004FA1A9 /* WBDemoViewController.swift */; };
@@ -73,6 +74,7 @@
 		2D02BCCE1F3DB7900045AE7B /* WBDiscoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBDiscoverViewController.swift; sourceTree = "<group>"; };
 		2D02BCD01F3DB7AA0045AE7B /* WBProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBProfileViewController.swift; sourceTree = "<group>"; };
 		2D1B50DB1F47315F008C5362 /* WBNetworkMenage+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WBNetworkMenage+Extensions.swift"; sourceTree = "<group>"; };
+		2D2868791F55C7EE005B17C2 /* WBUseracount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBUseracount.swift; sourceTree = "<group>"; };
 		2D2AC3681F55607D00A3D60E /* WeiBoCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeiBoCommon.swift; sourceTree = "<group>"; };
 		2D2AC36B1F55643E00A3D60E /* WBOAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBOAuthViewController.swift; sourceTree = "<group>"; };
 		2D422A261F41A630004FA1A9 /* WBDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBDemoViewController.swift; sourceTree = "<group>"; };
@@ -265,6 +267,14 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		2D2868781F55C7AF005B17C2 /* NWModel */ = {
+			isa = PBXGroup;
+			children = (
+				2D2868791F55C7EE005B17C2 /* WBUseracount.swift */,
+			);
+			path = NWModel;
+			sourceTree = "<group>";
+		};
 		2D2AC36A1F55640100A3D60E /* OAuth */ = {
 			isa = PBXGroup;
 			children = (
@@ -314,6 +324,7 @@
 		2D8B58221F45F6EB00E2371F /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				2D2868781F55C7AF005B17C2 /* NWModel */,
 				2D8B58231F45F75000E2371F /* WBNetworkMenage.swift */,
 				2D1B50DB1F47315F008C5362 /* WBNetworkMenage+Extensions.swift */,
 			);
@@ -554,6 +565,7 @@
 				2D422A291F41D47F004FA1A9 /* UIBarButton+Extensions.swift in Sources */,
 				2D42FAE31F4322B7000E4239 /* WBVisitorVIew.swift in Sources */,
 				2D02BCC31F3DB55E0045AE7B /* WBMainViewController.swift in Sources */,
+				2D28687A1F55C7EE005B17C2 /* WBUseracount.swift in Sources */,
 				2DB3893E1F49E9D300088408 /* WBstatuListViewModel.swift in Sources */,
 				2D02BCCB1F3DB7440045AE7B /* WBHomeViewController.swift in Sources */,
 				2D42FAE51F432553000E4239 /* UIimage+UIButton+Extensions.swift in Sources */,
