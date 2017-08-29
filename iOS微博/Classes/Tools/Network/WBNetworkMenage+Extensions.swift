@@ -34,7 +34,7 @@ extension WBNetworkMenage {
     // 未读数据量
     func unreadCount(completion: @escaping (_ count: Int) -> ())  {
         
-        guard let uid = uid else {
+        guard let uid = userAccount.uid else {
             return
         }
         let urlString = "https://rm.api.weibo.com/2/remind/unread_count.json"

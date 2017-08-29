@@ -32,23 +32,31 @@ class WBNetworkMenage: AFHTTPSessionManager {
     
     }()//执行（）
     
-    // token令牌  
-    var tokenOut: String? // = "2.00ieZlUGFJN6sBb90c7fcfc1DP9BgB"
+//    // token令牌  
+//    var tokenOut: String? // = "2.00ieZlUGFJN6sBb90c7fcfc1DP9BgB"
+//    
+//    // 用户微博id
+//    var uid: String? = "5951425552"
+    
+    //用户账户的懒加载
+    lazy var userAccount = WBUseracount()
+    
+    
+    
     
     var userLogon: Bool {
     
-        return tokenOut != nil
+        return userAccount.access_token != nil
     }
     
-    // 用户微博id
-    var uid: String? = "5951425552"
+   
     func tokenRequest(HTTPrequest: WBHTTPrequest,URLSting: String,parameters: [String: AnyObject]?,completion:
         @escaping (_ json: AnyObject?,_ issuccess: Bool)->()) {
         
         
         // 如果token为空 下面都不执行，没有登录
         
-        guard let tokenIn = tokenOut else {
+        guard let tokenIn = userAccount.access_token else {
             
             
             // FIXME: 通知，没有token 没有登录
