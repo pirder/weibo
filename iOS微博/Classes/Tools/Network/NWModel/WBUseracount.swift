@@ -13,7 +13,7 @@ import UIKit
 class WBUseracount: NSObject {
 
     //／令牌
-    var access_token: String?   //= "2.00ieZlUGFJN6sBb90c7fcfc1DP9BgB"
+    var access_token: String?
     //／用户代号
     var uid: String?
     //／（秒）access_token生命周期
@@ -55,6 +55,22 @@ class WBUseracount: NSObject {
         //使用字典属性
         yy_modelSet(with: dict ?? [:])
         
+        ///token 过期
+        if expiresDate?.compare(Date() ) != .orderedDescending
+        {
+        print("过期")
+            //清空token
+
+            access_token = nil
+            uid = nil
+            
+            //删除账户文件
+           try? FileManager.default.removeItem(atPath: filePath)
+            
+            
+        }
+       
+        print("可以")
         
     }
     
