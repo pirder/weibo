@@ -23,7 +23,7 @@ class WBOAuthViewController: UIViewController {
         //取消滚动
         webview.scrollView.isScrollEnabled = false
         
-        //设置代理　
+        //设置代理
         webview.delegate = self
         
         
@@ -117,7 +117,10 @@ extension WBOAuthViewController: UIWebViewDelegate{
     let code =     request.url?.query?.substring(from: "code=".endIndex) ?? ""
         
         print("授权码 - \(code)")
+        //使用授权码获取token
+        WBNetworkMenage.shared.loadAccessToken(code: code)
         
+        //登录成功后还有菊花
         return false
     }
     func webViewDidStartLoad(_ webView: UIWebView) {

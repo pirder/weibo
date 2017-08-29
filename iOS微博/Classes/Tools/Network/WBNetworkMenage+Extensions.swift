@@ -31,7 +31,7 @@ extension WBNetworkMenage {
     
         }
     }
-    
+    // 未读数据量
     func unreadCount(completion: @escaping (_ count: Int) -> ())  {
         
         guard let uid = uid else {
@@ -51,6 +51,31 @@ extension WBNetworkMenage {
     }
 }
 
+// MARK: - OAuth方法
+extension WBNetworkMenage {
+
+    /// 加载token
+    func loadAccessToken(code: String)  {
+        
+        let urlstring = "https://api.weibo.com/oauth2/access_token"
+       
+        let params = ["client_id": "WBAppKey",
+                      "client_secret": "WBAppSecret",
+                      "grant_type": "authorization_code",
+                      "code": code,
+                      "redirect_uri": "WBRedirectURI"]
+        
+        //发起网络请求
+        
+        request(HTTPrequest: .POST, URLSting: urlstring, parameters: params as [String : AnyObject]) { (json, isSuccess) in
+            print(json ?? "json失败")
+        }
+        
+        
+    }
+
+
+}
 
 
 
