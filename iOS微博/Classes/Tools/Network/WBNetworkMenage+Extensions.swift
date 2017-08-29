@@ -55,7 +55,7 @@ extension WBNetworkMenage {
 extension WBNetworkMenage {
 
     /// 加载token
-    func loadAccessToken(code: String)  {
+    func loadAccessToken(code: String, completion: @escaping (_ isSuccess: Bool) -> () )  {
         
         let urlstring = "https://api.weibo.com/oauth2/access_token"
        
@@ -78,6 +78,10 @@ extension WBNetworkMenage {
         
         //保存模型
         self.userAccount.saveAccount()
+        
+        //回调
+        completion(isSuccess)
+        
         }
        
         
