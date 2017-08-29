@@ -12,10 +12,10 @@ import UIKit
 class WBOAuthViewController: UIViewController {
 
     
-    fileprivate lazy var weview = UIWebView()
+    fileprivate lazy var webview = UIWebView()
     
     override func loadView() {
-        view  = weview
+        view  = webview
         view.backgroundColor  = UIColor.white
         
         // 设置导航栏
@@ -28,7 +28,21 @@ class WBOAuthViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+       //加载授权界面
+        let urlstring = "https://api.weibo.com/oauth2/authorize?client_id=\(WBAppKey)&redirect_uri=\(WBRedirectURI)"
+       
+        //url确定访问资源
+        guard let url = URL(string: urlstring)
+            else {
+            return
+        }
+        
+        //建立请求
+        let request = URLRequest(url: url)
+        
+        //加载请求
+        webview.loadRequest(request)
+    
     }
 
     override func didReceiveMemoryWarning() {
