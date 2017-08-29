@@ -114,20 +114,27 @@ extension WBOAuthViewController: UIWebViewDelegate{
         
         //从query里获取授权码
         //URL中一定有code
-    let code =     request.url?.query?.substring(from: "code=".endIndex) ?? ""
+    let code = request.url?.query?.substring(from: "code=".endIndex) ?? ""
         
         print("授权码 - \(code)")
+        
         //使用授权码获取token
         WBNetworkMenage.shared.loadAccessToken(code: code)
         
         //登录成功后还有菊花
         return false
     }
+    
     func webViewDidStartLoad(_ webView: UIWebView) {
+        
         SVProgressHUD.show()
+        
     }
+    
     func webViewDidFinishLoad(_ webView: UIWebView) {
+        
         SVProgressHUD.dismiss()
+        
     }
 
 }

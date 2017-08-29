@@ -18,7 +18,19 @@ enum WBHTTPrequest {
 class WBNetworkMenage: AFHTTPSessionManager {
 
    ///静态区域 ／常量／闭包
-    static let shared = WBNetworkMenage()
+    static let shared: WBNetworkMenage = {
+    
+        //实例化shared
+        let intshared = WBNetworkMenage()
+        
+        //设置反序列化支持的数据类型 text/plain
+        intshared.responseSerializer.acceptableContentTypes?.insert("text/plain")
+        
+        //返回对象
+        return intshared
+    
+    
+    }()//执行（）
     
     // token令牌  
     var tokenOut: String? // = "2.00ieZlUGFJN6sB5fa251acd6WZhpsB"

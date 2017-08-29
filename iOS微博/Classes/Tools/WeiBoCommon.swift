@@ -18,3 +18,6 @@ let WBRedirectURI  = "http://baidu.com"
 let  WBAppSecret =  "4535c0c7671f92f8776f5489474eb306"
 
 let WBuserShouldLoginNotification = "WBuserShouldLoginNotification"
+
+
+
