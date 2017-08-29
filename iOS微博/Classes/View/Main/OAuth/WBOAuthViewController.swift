@@ -87,11 +87,34 @@ extension WBOAuthViewController: UIWebViewDelegate{
         
         
         //如果请求地址中含有www.baiu.com 不加载／加载页面
+        // 如果没有baidu.com
+        if request.url?.absoluteString.hasPrefix(WBRedirectURI) == false {
+            
+            return true
+        }
         
         print("加载请求 ---\(request.url?.absoluteString ?? "出现错误") ")
         
+        // query URL中“？”后面的所有部分
+        print("加载请求 ---\(request.url?.query ?? "") ")
+
+        
         // 如果有code= 授权成功，否则授权失败
-        return true
+        
+        if request.url?.query?.hasPrefix("code=") == false {
+            print("取消授权")
+            close()
+            return false
+        }
+        
+        
+        //从query里获取授权码
+        //URL中一定有code
+    let code =     request.url?.query?.substring(from: "code=".endIndex) ?? ""
+        
+        print("授权码 - \(code)")
+        
+        return false
     }
 
 }
