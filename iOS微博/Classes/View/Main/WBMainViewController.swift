@@ -107,9 +107,18 @@ extension WBMainViewController{
     }
     
     
+    
+    
+        
     /// 时钟调用方法
     @objc fileprivate func updateTimer(){
      
+        
+        if !WBNetworkMenage.shared.userLogon
+        {
+            return
+        }
+        else{
         WBNetworkMenage.shared.unreadCount { (count) in
             
             //设置 首页tabbaritem 的  badgenubmer
@@ -118,8 +127,9 @@ extension WBMainViewController{
             
             //设置 app tabbaritem 的  badgenubmer  注意要用户授权
             UIApplication.shared.applicationIconBadgeNumber = count
+            }
         }
-
+  
     
     }
 

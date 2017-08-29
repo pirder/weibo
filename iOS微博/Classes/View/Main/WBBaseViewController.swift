@@ -10,8 +10,7 @@ import UIKit
 
 class WBBaseViewController: UIViewController {
     
-    // 用户登录与否
-    var userLogon = true
+    
     
     // 访客视图的字典信息，等待外部传进来，然后再传给里面  代理
     var visitorInfoOut: [String: String]?
@@ -33,7 +32,7 @@ class WBBaseViewController: UIViewController {
         super.viewDidLoad()
            setupUI()
         
-        loadDate()
+        WBNetworkMenage.shared.userLogon ?  loadDate() : ()
     }
     
     
@@ -90,7 +89,7 @@ extension WBBaseViewController  {
         
         
         // 三目判断是否访客
-        userLogon ? setupTableView() :setupVistorView()
+        WBNetworkMenage.shared.userLogon ? setupTableView() :setupVistorView()
         
         
         

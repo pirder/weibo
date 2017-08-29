@@ -21,7 +21,12 @@ class WBNetworkMenage: AFHTTPSessionManager {
     static let shared = WBNetworkMenage()
     
     // token令牌  
-    var tokenOut: String? = "2.00ieZlUGFJN6sB5fa251acd6WZhpsB"
+    var tokenOut: String? // = "2.00ieZlUGFJN6sB5fa251acd6WZhpsB"
+    
+    var userLogon: Bool {
+    
+        return tokenOut != nil
+    }
     
     // 用户微博id
     var uid: String? = "5951425552"
