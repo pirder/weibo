@@ -73,7 +73,7 @@ extension WBNetworkMenage {
         
         //直接设置useraccount的属性
         self.userAccount.yy_modelSet(with: (json as? [String: AnyObject]) ?? [:])
-            
+        
         print(self.userAccount)
         
         }

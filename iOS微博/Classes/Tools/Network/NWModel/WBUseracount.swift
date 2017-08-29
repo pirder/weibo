@@ -10,12 +10,22 @@ import UIKit
 
 class WBUseracount: NSObject {
 
-    //令牌
+    //／令牌
     var access_token: String?   //= "2.00ieZlUGFJN6sBb90c7fcfc1DP9BgB"
-    //用户代号
+    //／用户代号
     var uid: String?
-    //过期日期（秒）access_token生命周期
-        var expires_in: TimeInterval = 0
+    //／（秒）access_token生命周期
+    var expires_in: TimeInterval = 0 {
+        didSet {
+        
+            expiresDate = Date(timeIntervalSinceNow: expires_in)
+        
+        }
+    
+    }
+    
+    ///过期日期
+    var expiresDate: Date?
     
     override var description: String{
      
