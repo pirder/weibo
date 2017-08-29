@@ -42,10 +42,17 @@ class WBUseracount: NSObject {
         dict.removeValue(forKey: "expires_in")
         
         // 字典反序列化
-        let data = try? JSONSerialization.data(withJSONObject: dict, options: [])
-        
+       guard let data = try? JSONSerialization.data(withJSONObject: dict, options: [])
+        else{
+            return
+        }
+        //文件内容
         let documentPaths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
-        print(documentPaths)
+        let filePath = documentPaths[0] + "/useraccount.json"
+        print(filePath)
+        
+        //写入磁盘
+        (data as NSData).write(toFile: filePath, atomically: true)
     }
     
     

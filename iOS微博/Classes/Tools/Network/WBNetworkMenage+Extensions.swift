@@ -69,7 +69,7 @@ extension WBNetworkMenage {
         
        request(HTTPrequest: .POST, URLSting: urlstring, parameters: params as [String : AnyObject]) { (json, isSuccess) in
         
-        print(json)
+       // print(json)
         
         //直接设置useraccount的属性
         self.userAccount.yy_modelSet(with: (json as? [String: AnyObject]) ?? [:])
