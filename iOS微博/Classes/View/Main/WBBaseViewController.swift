@@ -33,8 +33,15 @@ class WBBaseViewController: UIViewController {
            setupUI()
         
         WBNetworkMenage.shared.userLogon ?  loadDate() : ()
+        
+        //注册通知
+        NotificationCenter.default.addObserver(self, selector: #selector(loginSuccess), name: NSNotification.Name(rawValue: WBuserLoginSuccessNotification), object: nil)
+        
     }
-    
+    //注销通知
+    deinit {
+            NotificationCenter.default.removeObserver(self)
+    }
     
     
     //  loaddate
@@ -57,6 +64,19 @@ class WBBaseViewController: UIViewController {
 
 extension WBBaseViewController{
    
+    //登录成功通知
+    @objc fileprivate func loginSuccess(n: Notification){
+    
+        print("登录成功\(n)")
+        
+        //更新UI  view 的 getter 如果view = nil 那么重新调用viewloda
+        view = nil
+    
+        // 注销两次通知
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    
    @objc func loginbtn(){
         print("用户登录")
     //发送通知
