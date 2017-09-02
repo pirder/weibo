@@ -16,8 +16,8 @@ let WBRedirectURI  = "http://baidu.com"
 
 /// 应用程序加密信息
 let  WBAppSecret =  "4535c0c7671f92f8776f5489474eb306"
-
+/// 用户需要登录通知
 let WBuserShouldLoginNotification = "WBuserShouldLoginNotification"
-
-
+/// 用户成功登录通知
+let WBuserLoginSuccessNotification = "WBuserLoginSuccessNotification"
 
