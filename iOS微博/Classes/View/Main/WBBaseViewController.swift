@@ -35,7 +35,11 @@ class WBBaseViewController: UIViewController {
         WBNetworkMenage.shared.userLogon ?  loadDate() : ()
         
         //注册通知
-        NotificationCenter.default.addObserver(self, selector: #selector(loginSuccess), name: NSNotification.Name(rawValue: WBuserLoginSuccessNotification), object: nil)
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(loginSuccess),
+            name: NSNotification.Name(rawValue: WBuserLoginSuccessNotification),
+            object: nil)
         
     }
     //注销通知
@@ -69,21 +73,25 @@ extension WBBaseViewController{
     
         print("登录成功\(n)")
         
+        //登录成功后清除未登录按钮
+        natitem.leftBarButtonItem = nil
+        natitem.rightBarButtonItem = nil
+        
         //更新UI  view 的 getter 如果view = nil 那么重新调用viewloda
         view = nil
     
-        // 注销两次通知
+        // 注销防止两次通知
         NotificationCenter.default.removeObserver(self)
     }
     
     
-   @objc func loginbtn(){
+   @objc fileprivate func loginbtn(){
         print("用户登录")
     //发送通知
     NotificationCenter.default.post(name: NSNotification.Name(rawValue: WBuserShouldLoginNotification), object: nil)
     }
  
-    @objc func resignterbtn(){
+    @objc fileprivate func resignterbtn(){
     
       print("用户注册")
     }
@@ -138,6 +146,9 @@ extension WBBaseViewController  {
                                               left: 0,
                                               bottom: tabBarController?.tabBar.bounds.height ?? 49,
                                               right: 0)
+        
+       //滚动条缩进
+        tableView?.scrollIndicatorInsets = (tableView?.contentInset)!
         
         //设置刷新控件
            //1,实例化控件
