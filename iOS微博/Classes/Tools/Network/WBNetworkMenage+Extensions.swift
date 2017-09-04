@@ -51,6 +51,30 @@ extension WBNetworkMenage {
     }
 }
 
+// MARK: - 获取用户头像
+extension WBNetworkMenage {
+
+    func loadUserInfo ( completion:  @escaping (_ dict: [String: AnyObject]) -> ())  {
+        
+        guard let uid = userAccount.uid else {
+            return
+        }
+        let urlstring = "https://api.weibo.com/2/users/show.json"
+        
+        let params = ["uid": uid]
+        
+        tokenRequest(HTTPrequest: .GET, URLSting: urlstring, parameters: params as [String : AnyObject]) { (json, isSuccess) in
+           //完成回调把json给dict
+            completion((json as? [String : AnyObject]) ?? [:])
+        }
+    }
+
+
+}
+
+
+
+
 // MARK: - OAuth方法
 extension WBNetworkMenage {
 
@@ -69,18 +93,23 @@ extension WBNetworkMenage {
         
        request(HTTPrequest: .POST, URLSting: urlstring, parameters: params as [String : AnyObject]) { (json, isSuccess) in
         
-       // print(json)
         
         //直接设置useraccount的属性
         self.userAccount.yy_modelSet(with: (json as? [String: AnyObject]) ?? [:])
         
-        print(self.userAccount)
+        //加载用户头像信息
+        self.loadUserInfo(completion: { (dict) in
+            
+            self.userAccount.yy_modelSet(with: (dict as [String: AnyObject]))
+             print(self.userAccount)
+            
+            //保存模型
+            self.userAccount.saveAccount()
+            //完成回调
+            completion(isSuccess)
+
+        })
         
-        //保存模型
-        self.userAccount.saveAccount()
-        
-        //回调
-        completion(isSuccess)
         
         }
        

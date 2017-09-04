@@ -63,8 +63,14 @@ class WBOAuthViewController: UIViewController {
     
     /// 监听方法
     @objc fileprivate func close(){
+        
         SVProgressHUD.dismiss()
+        
         dismiss(animated: true, completion: nil)
+        
+        //关闭刷新控件
+        
+        
     }
     @objc fileprivate func antoFill(){
     

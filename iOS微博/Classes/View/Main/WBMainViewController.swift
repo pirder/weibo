@@ -68,7 +68,8 @@ class WBMainViewController: UITabBarController {
             SVProgressHUD.setDefaultMaskType(.black)
             
             SVProgressHUD.showInfo(withStatus: "用户登录超时")
-        
+          
+            //修改延时时间显示
             when = DispatchTime.now() + 2
         }
     
@@ -76,10 +77,13 @@ class WBMainViewController: UITabBarController {
         
         //回复默认表现格式
         SVProgressHUD.setDefaultMaskType(.clear)
+        
+        
         //展现登录控制器 通常UInavigationcontroller 一起
         let nav = UINavigationController(rootViewController: WBOAuthViewController() )
         
         self.present(nav, animated: true, completion: nil)
+        
         
         
         }

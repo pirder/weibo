@@ -120,9 +120,10 @@ class WBNetworkMenage: AFHTTPSessionManager {
             if (taTask?.response as? HTTPURLResponse)?.statusCode == 403 {
                 print("token登录过期")
                 
-                NotificationCenter.default.post(
-                    name: NSNotification.Name(rawValue: WBuserShouldLoginNotification),
-                    object: "bad token")
+                NotificationCenter.default.post(name:
+                NSNotification.Name(rawValue: WBuserShouldLoginNotification),
+                object: "bad token",
+                userInfo: nil)
             }
             
             
