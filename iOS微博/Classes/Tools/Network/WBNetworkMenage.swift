@@ -49,12 +49,16 @@ class WBNetworkMenage: AFHTTPSessionManager {
         
         
         // 如果token为空 下面都不执行，没有登录
-        
+        // 如果token = nil 直接返回，一般token不会为nil
         guard let tokenIn = userAccount.access_token else {
             
             
-            // FIXME: 通知，没有token 没有登录
+            // 没有token 没有登录
             print("没有token 没有登录")
+            
+            NotificationCenter.default.post(
+                name: NSNotification.Name(rawValue: WBuserShouldLoginNotification),
+                object: nil)
             
             completion(nil, false)
             
@@ -109,12 +113,16 @@ class WBNetworkMenage: AFHTTPSessionManager {
           
             completion(json as AnyObject, true) //json回调
     }
-    
-        let failure = { (taTask: URLSessionDataTask?,error: Error ) -> () in
+    // 失败回调
+            let failure = { (taTask: URLSessionDataTask?,error: Error ) -> () in
             
             // FIXME: 通知：                print("token登录过期")
             if (taTask?.response as? HTTPURLResponse)?.statusCode == 403 {
                 print("token登录过期")
+                
+                NotificationCenter.default.post(
+                    name: NSNotification.Name(rawValue: WBuserShouldLoginNotification),
+                    object: "bad token")
             }
             
             

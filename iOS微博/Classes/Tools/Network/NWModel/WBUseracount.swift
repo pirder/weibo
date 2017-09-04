@@ -53,7 +53,7 @@ class WBUseracount: NSObject {
         
         
         //使用字典属性
-//        yy_modelSet(with: dict ?? [:])
+        yy_modelSet(with: dict ?? [:])
         
         ///token 过期
         if expiresDate?.compare(Date() ) != .orderedDescending
