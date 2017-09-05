@@ -20,8 +20,8 @@
 		2D02BCD11F3DB7AA0045AE7B /* WBProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D02BCD01F3DB7AA0045AE7B /* WBProfileViewController.swift */; };
 		2D14501A1F5E69B500BF17F1 /* WBTiltebutton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1450191F5E69B500BF17F1 /* WBTiltebutton.swift */; };
 		2D1B50DC1F473160008C5362 /* WBNetworkMenage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1B50DB1F47315F008C5362 /* WBNetworkMenage+Extensions.swift */; };
-		2D23FE3B1F5EE3A900CD7922 /* WBStatusCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D23FE3A1F5EE3A900CD7922 /* WBStatusCellTableViewCell.swift */; };
-		2D23FE3D1F5EE3BF00CD7922 /* WBStatusCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D23FE3C1F5EE3BF00CD7922 /* WBStatusCellTableViewCell.xib */; };
+		2D23FE3F1F5EE6D600CD7922 /* WBStatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D23FE3E1F5EE6D600CD7922 /* WBStatusCell.swift */; };
+		2D23FE411F5EE6E800CD7922 /* WBStatusCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D23FE401F5EE6E800CD7922 /* WBStatusCell.xib */; };
 		2D28687A1F55C7EE005B17C2 /* WBUseracount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2868791F55C7EE005B17C2 /* WBUseracount.swift */; };
 		2D2AC3691F55607D00A3D60E /* WeiBoCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2AC3681F55607D00A3D60E /* WeiBoCommon.swift */; };
 		2D2AC36C1F55643E00A3D60E /* WBOAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2AC36B1F55643E00A3D60E /* WBOAuthViewController.swift */; };
@@ -78,8 +78,8 @@
 		2D02BCD01F3DB7AA0045AE7B /* WBProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBProfileViewController.swift; sourceTree = "<group>"; };
 		2D1450191F5E69B500BF17F1 /* WBTiltebutton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBTiltebutton.swift; sourceTree = "<group>"; };
 		2D1B50DB1F47315F008C5362 /* WBNetworkMenage+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WBNetworkMenage+Extensions.swift"; sourceTree = "<group>"; };
-		2D23FE3A1F5EE3A900CD7922 /* WBStatusCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBStatusCellTableViewCell.swift; sourceTree = "<group>"; };
-		2D23FE3C1F5EE3BF00CD7922 /* WBStatusCellTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WBStatusCellTableViewCell.xib; sourceTree = "<group>"; };
+		2D23FE3E1F5EE6D600CD7922 /* WBStatusCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBStatusCell.swift; sourceTree = "<group>"; };
+		2D23FE401F5EE6E800CD7922 /* WBStatusCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WBStatusCell.xib; sourceTree = "<group>"; };
 		2D2868791F55C7EE005B17C2 /* WBUseracount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBUseracount.swift; sourceTree = "<group>"; };
 		2D2AC3681F55607D00A3D60E /* WeiBoCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeiBoCommon.swift; sourceTree = "<group>"; };
 		2D2AC36B1F55643E00A3D60E /* WBOAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBOAuthViewController.swift; sourceTree = "<group>"; };
@@ -286,8 +286,8 @@
 		2D23FE391F5EE35C00CD7922 /* StatuCell */ = {
 			isa = PBXGroup;
 			children = (
-				2D23FE3A1F5EE3A900CD7922 /* WBStatusCellTableViewCell.swift */,
-				2D23FE3C1F5EE3BF00CD7922 /* WBStatusCellTableViewCell.xib */,
+				2D23FE3E1F5EE6D600CD7922 /* WBStatusCell.swift */,
+				2D23FE401F5EE6E800CD7922 /* WBStatusCell.xib */,
 			);
 			path = StatuCell;
 			sourceTree = "<group>";
@@ -485,8 +485,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D23FE411F5EE6E800CD7922 /* WBStatusCell.xib in Resources */,
 				2D4437521F449941008B5A8D /* locat.json in Resources */,
-				2D23FE3D1F5EE3BF00CD7922 /* WBStatusCellTableViewCell.xib in Resources */,
 				2D4437541F449C5D008B5A8D /* newarray.json in Resources */,
 				2D4F697E1F408A01007A6869 /* tabbar_compose_button@3x.png in Resources */,
 				2D02BC921F3DAA820045AE7B /* Assets.xcassets in Resources */,
@@ -584,7 +584,6 @@
 				2D02BCD11F3DB7AA0045AE7B /* WBProfileViewController.swift in Sources */,
 				2D14501A1F5E69B500BF17F1 /* WBTiltebutton.swift in Sources */,
 				2D422A271F41A630004FA1A9 /* WBDemoViewController.swift in Sources */,
-				2D23FE3B1F5EE3A900CD7922 /* WBStatusCellTableViewCell.swift in Sources */,
 				2D02BCCF1F3DB7900045AE7B /* WBDiscoverViewController.swift in Sources */,
 				2D1B50DC1F473160008C5362 /* WBNetworkMenage+Extensions.swift in Sources */,
 				2D4278231F3F6D8B0080A9F3 /* Bundle+Extensions.swift in Sources */,
@@ -593,6 +592,7 @@
 				2D422A291F41D47F004FA1A9 /* UIBarButton+Extensions.swift in Sources */,
 				2D42FAE31F4322B7000E4239 /* WBVisitorVIew.swift in Sources */,
 				2D02BCC31F3DB55E0045AE7B /* WBMainViewController.swift in Sources */,
+				2D23FE3F1F5EE6D600CD7922 /* WBStatusCell.swift in Sources */,
 				2D28687A1F55C7EE005B17C2 /* WBUseracount.swift in Sources */,
 				2DB3893E1F49E9D300088408 /* WBstatuListViewModel.swift in Sources */,
 				2D02BCCB1F3DB7440045AE7B /* WBHomeViewController.swift in Sources */,

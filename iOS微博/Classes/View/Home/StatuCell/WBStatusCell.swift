@@ -1,5 +1,5 @@
 //
-//  WBStatusCellTableViewCell.swift
+//  WBStatusCell.swift
 //  iOS微博
 //
 //  Created by pirders on 2017/9/5.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WBStatusCellTableViewCell: UITableViewCell {
+class WBStatusCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
