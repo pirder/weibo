@@ -136,7 +136,34 @@ extension WBHomeViewController{
         
        // 注册原型cellId
         tableView?.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
+        
+        setupNavTitle()
+        
     }
+    
+    fileprivate func setupNavTitle(){
+    
+        let title = WBNetworkMenage.shared.userAccount.screen_name
+        
+        let btn = WBTiltebutton(title: title)
+        
+        //navigation 的titleview 改为button
+        natitem.titleView = btn
+        
+        
+        btn.addTarget(self, action: #selector(touchtitleinside), for: .touchUpInside)
+    
+        
+        
+            }
+
+    
+    //把btn传进来
+    @objc func touchtitleinside(btn:  UIButton){
+        
+        btn.isSelected =  !btn.isSelected
+    }
+
     
     
     

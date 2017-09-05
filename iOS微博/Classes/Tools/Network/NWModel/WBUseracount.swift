@@ -51,6 +51,7 @@ class WBUseracount: NSObject {
         let filePath = documentPaths[0] + "/useraccount.json"
 
        guard let data = NSData(contentsOfFile: filePath),
+        //tip： token文件在此
         let dict = try? JSONSerialization.jsonObject(with: data as Data, options: []) as? [String: AnyObject]
         
         else
@@ -60,7 +61,8 @@ class WBUseracount: NSObject {
         
         
         //使用字典属性
-        yy_modelSet(with: dict ?? [:])
+        // 用户是否登录成功 是否有token上面tip
+     yy_modelSet(with: dict ?? [:])
         
         ///token 过期
         if expiresDate?.compare(Date() ) != .orderedDescending

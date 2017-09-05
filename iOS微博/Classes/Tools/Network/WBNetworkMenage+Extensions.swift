@@ -64,7 +64,8 @@ extension WBNetworkMenage {
         let params = ["uid": uid]
         
         tokenRequest(HTTPrequest: .GET, URLSting: urlstring, parameters: params as [String : AnyObject]) { (json, isSuccess) in
-           //完成回调把json给dict
+          
+            //完成回调把json给dict
             completion((json as? [String : AnyObject]) ?? [:])
         }
     }
