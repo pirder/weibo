@@ -11,7 +11,7 @@ import UIKit
 class WBTiltebutton: UIButton {
 
     init(title: String?){
-    super.init(frame: CGRect())
+        super.init(frame: CGRect())
         
         
         //如果登录成功title 得到的是登录后的用户名
@@ -20,7 +20,7 @@ class WBTiltebutton: UIButton {
         }
         else{
         
-            setTitle(title, for: [])
+            setTitle(title! +  " ", for: [])
             setImage(UIImage(named: "navigationbar_arrow_down"), for: [])
             //选中图片
             setImage(UIImage(named:  "navigationbar_arrow_up"), for: .selected)
@@ -38,7 +38,26 @@ class WBTiltebutton: UIButton {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-   
+    
+    override func layoutSubviews() {
+        
+        super.layoutSubviews()
+        
+        
+        //判断有titlelabel,imageview
+//            guard let titlelabel = titleLabel,
+//                let imageview = imageView else {
+//                    return
+//            }
+//            imageview.frame = imageview.frame.offsetBy( dx: titlelabel.bounds.width , dy: 0)
+//            
+//            titlelabel.frame = titlelabel.frame.offsetBy(dx: -imageview.bounds.width, dy: 0)
+//            
+
+        
+        
+        
+    }
     
     
     

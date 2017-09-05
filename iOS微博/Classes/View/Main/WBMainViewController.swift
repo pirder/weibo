@@ -134,6 +134,10 @@ extension WBMainViewController: UITabBarControllerDelegate{
                 vc.loadDate()
             })
             
+            //清除TabItem 的 number
+            vc.tabBarItem.badgeValue = nil
+            UIApplication.shared.applicationIconBadgeNumber = 0
+            
             
         }
         

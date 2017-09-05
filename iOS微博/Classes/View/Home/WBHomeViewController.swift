@@ -135,7 +135,7 @@ extension WBHomeViewController{
        natitem.leftBarButtonItem = UIBarButtonItem(title: "好友", target: self, action: #selector(shouFrident))
         
        // 注册原型cellId
-        tableView?.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
+        tableView?.register(UINib(nibName: "WBStatusCellTableViewCell", bundle: nil), forCellReuseIdentifier: cellId)
         
         setupNavTitle()
         
@@ -149,7 +149,7 @@ extension WBHomeViewController{
         
         //navigation 的titleview 改为button
         natitem.titleView = btn
-        
+       
         
         btn.addTarget(self, action: #selector(touchtitleinside), for: .touchUpInside)
     
