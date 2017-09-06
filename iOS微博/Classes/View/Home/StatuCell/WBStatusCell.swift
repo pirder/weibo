@@ -25,6 +25,8 @@ class WBStatusCell: UITableViewCell {
             vipIconView.image = viewModel?.vipIcon
        //用户头像
             IconView.et_setImage(urlstring: viewModel?.status.user?.profile_image_url, placeholderImage: UIImage(named: "navigationbar_friendsearch"))
+      //添加工具栏
+         toolBar.viewModel = viewModel
         }
     
     
@@ -44,7 +46,8 @@ class WBStatusCell: UITableViewCell {
     @IBOutlet weak var StatusLabel: UILabel!
     //认证图标
     @IBOutlet weak var vipIconView: UIImageView!
-    
+    //底部工具
+    @IBOutlet weak var toolBar: WBStatusToolBar!
     
     override func awakeFromNib() {
         super.awakeFromNib()

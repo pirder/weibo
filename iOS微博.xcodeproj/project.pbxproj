@@ -39,6 +39,7 @@
 		2D9B774D1F5FB9A0007E2657 /* WBUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9B774C1F5FB9A0007E2657 /* WBUser.swift */; };
 		2D9B774F1F5FBDF1007E2657 /* WBstatuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9B774E1F5FBDF1007E2657 /* WBstatuViewModel.swift */; };
 		2DA67FEB1F60065B00DC5221 /* UIImageView+webimage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA67FEA1F60065B00DC5221 /* UIImageView+webimage.swift */; };
+		2DA67FED1F60165D00DC5221 /* WBStatusToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA67FEC1F60165D00DC5221 /* WBStatusToolBar.swift */; };
 		2DB3893B1F49E1EE00088408 /* WBstutas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB3893A1F49E1EE00088408 /* WBstutas.swift */; };
 		2DB3893E1F49E9D300088408 /* WBstatuListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB3893D1F49E9D300088408 /* WBstatuListViewModel.swift */; };
 		4B279808FAC47FDED39B3D7C /* Pods_iOS__.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F9A8A235567502CB2039D74 /* Pods_iOS__.framework */; };
@@ -100,6 +101,7 @@
 		2D9B774C1F5FB9A0007E2657 /* WBUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBUser.swift; sourceTree = "<group>"; };
 		2D9B774E1F5FBDF1007E2657 /* WBstatuViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBstatuViewModel.swift; sourceTree = "<group>"; };
 		2DA67FEA1F60065B00DC5221 /* UIImageView+webimage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+webimage.swift"; sourceTree = "<group>"; };
+		2DA67FEC1F60165D00DC5221 /* WBStatusToolBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBStatusToolBar.swift; sourceTree = "<group>"; };
 		2DB3893A1F49E1EE00088408 /* WBstutas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBstutas.swift; sourceTree = "<group>"; };
 		2DB3893D1F49E9D300088408 /* WBstatuListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBstatuListViewModel.swift; sourceTree = "<group>"; };
 		3F9A8A235567502CB2039D74 /* Pods_iOS__.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS__.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -296,6 +298,7 @@
 			children = (
 				2D23FE3E1F5EE6D600CD7922 /* WBStatusCell.swift */,
 				2D23FE401F5EE6E800CD7922 /* WBStatusCell.xib */,
+				2DA67FEC1F60165D00DC5221 /* WBStatusToolBar.swift */,
 			);
 			path = StatuCell;
 			sourceTree = "<group>";
@@ -597,6 +600,7 @@
 				2D1B50DC1F473160008C5362 /* WBNetworkMenage+Extensions.swift in Sources */,
 				2D4278231F3F6D8B0080A9F3 /* Bundle+Extensions.swift in Sources */,
 				2DB3893B1F49E1EE00088408 /* WBstutas.swift in Sources */,
+				2DA67FED1F60165D00DC5221 /* WBStatusToolBar.swift in Sources */,
 				2D2AC3691F55607D00A3D60E /* WeiBoCommon.swift in Sources */,
 				2D422A291F41D47F004FA1A9 /* UIBarButton+Extensions.swift in Sources */,
 				2D42FAE31F4322B7000E4239 /* WBVisitorVIew.swift in Sources */,
