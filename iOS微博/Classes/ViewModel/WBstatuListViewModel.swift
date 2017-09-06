@@ -37,6 +37,7 @@ class WBstatuListViewModel {
 //        取出最后一条微博数据
         let max_id = !pullup ? 0 : (status.last?.status.id ?? 0)
         
+        //发起网络请求加载微博数据
         WBNetworkMenage.shared.statusList(since_id: since_id, max_id: max_id) { (List, isSuccess) in
             
             //判断网络是否成功
@@ -47,26 +48,17 @@ class WBstatuListViewModel {
             }
             var array = [WBstatuViewModel]()
             
-            //遍历数组
+            //遍历数组 字典转模型 还要转化为视图模型
             for dict in List ?? [] {
             
-            //微博模型
-             guard let model = WBstutas.yy_model(with: dict) else{
+            //1创建微博模型
+             guard let status = WBstutas.yy_model(with: dict) else{
                 continue
                 }
                 
-                array.append(WBstatuViewModel(model: model))
+                array.append(WBstatuViewModel(model: status))
             }
-        
-//            // 字典转模型
-//            guard  let array = NSArray.yy_modelArray(with: WBstutas.self, json: List ?? "")
-//                as? [WBstutas]
-//                
-//                else{
-//                    completion(isSuccess, false)
-//                    return
-//            }
-//            
+      
             print("刷新条数\(array.count)")
             print("刷新上拉")
 
@@ -84,6 +76,7 @@ class WBstatuListViewModel {
             if pullup && array.count == 0 {
                 
                 self.PullErrorTimes += 1
+                
                 completion(isSuccess, false)
             
             }else {

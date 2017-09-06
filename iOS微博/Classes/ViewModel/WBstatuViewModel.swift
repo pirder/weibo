@@ -9,7 +9,9 @@
 import Foundation
 
 /// 单条微博视图模型
-class WBstatuViewModel {
+
+//
+class WBstatuViewModel: CustomStringConvertible{
     
     
     
@@ -22,5 +24,14 @@ class WBstatuViewModel {
         init(model: WBstutas) {
         self.status = model
     }
+    
+    
+    var description: String{
+    
+        return status.description
+    
+    }
+    
+    
     
 }

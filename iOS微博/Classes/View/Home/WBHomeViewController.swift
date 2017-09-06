@@ -30,7 +30,7 @@ class WBHomeViewController: WBBaseViewController {
     override func loadDate() {
         
         //  网络管理 加载微博数据
-         print("加载数据完成\(self.listViewModel.status.last?.text ?? "没有数据刷新")")
+         print("加载数据完成\(self.listViewModel.status.last?.status.text ?? "没有数据刷新")")
        listViewModel.loadStatus(pullup: self.isPullup){ (isSuccess, shouldResfresh) in
         
         
@@ -110,8 +110,10 @@ extension WBHomeViewController{
          let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! WBStatusCell
         
         // 2,设置cell
-        cell.StatusLabel.text = listViewModel.status[indexPath.row].text
-        
+        let viewModel = listViewModel.status[indexPath.row]
+        cell.StatusLabel.text = viewModel.status.text
+        cell.nameLabel.text = viewModel.status.user?.screen_name
+
         // 3,返回cell
         return cell
         
