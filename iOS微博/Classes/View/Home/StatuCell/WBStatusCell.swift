@@ -27,11 +27,17 @@ class WBStatusCell: UITableViewCell {
             IconView.et_setImage(urlstring: viewModel?.status.user?.profile_image_url, placeholderImage: UIImage(named: "navigationbar_friendsearch"))
       //添加工具栏
          toolBar.viewModel = viewModel
+            
+//            //高度辩护
+//            pictureVIew.heightCount.constant = 0
+//            picturetop.constant = 0
+//            
         }
     
     
     }
     
+  
     //头像
     @IBOutlet weak var IconView: UIImageView!
     //名字
@@ -48,6 +54,10 @@ class WBStatusCell: UITableViewCell {
     @IBOutlet weak var vipIconView: UIImageView!
     //底部工具
     @IBOutlet weak var toolBar: WBStatusToolBar!
+    
+    @IBOutlet weak var pictureVIew: WBStatusPicture!
+    
+    @IBOutlet weak var picturetop: NSLayoutConstraint!
     
     override func awakeFromNib() {
         super.awakeFromNib()

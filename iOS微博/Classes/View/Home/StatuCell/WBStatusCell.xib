@@ -17,7 +17,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="403"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3J2-t7-0ec" id="BxX-kt-RvK">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="402.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="403"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i4a-wr-fmx" userLabel="顶部">
@@ -113,12 +113,15 @@
                             <outlet property="retweetButton" destination="SXP-Ux-PVJ" id="BAa-iC-UiP"/>
                         </connections>
                     </view>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TXQ-Cl-ie0">
-                        <rect key="frame" x="19" y="93" width="336" height="261.5"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TXQ-Cl-ie0" userLabel="配图" customClass="WBStatusPicture" customModule="iOS微博" customModuleProvider="target">
+                        <rect key="frame" x="19" y="93" width="336" height="222"/>
                         <color key="backgroundColor" red="1" green="0.42352941179999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="261.5" id="16L-jP-hau"/>
+                            <constraint firstAttribute="height" constant="222" id="16L-jP-hau"/>
                         </constraints>
+                        <connections>
+                            <outlet property="heightCount" destination="16L-jP-hau" id="T3o-4K-7sy"/>
+                        </connections>
                     </view>
                 </subviews>
                 <constraints>
@@ -159,6 +162,8 @@
                 <outlet property="StatusLabel" destination="mhS-Ns-1S0" id="vpH-dg-Wj0"/>
                 <outlet property="nameLabel" destination="gIU-1f-CMl" id="DRP-eB-AMW"/>
                 <outlet property="numberIconView" destination="GY1-Zm-TvD" id="OwE-eS-ARS"/>
+                <outlet property="pictureVIew" destination="TXQ-Cl-ie0" id="dX5-FQ-RqY"/>
+                <outlet property="picturetop" destination="n8N-Zh-WSk" id="Dmq-Ik-CHp"/>
                 <outlet property="sourceLabel" destination="rhR-dP-u5z" id="w2v-Pd-LkW"/>
                 <outlet property="timeLabel" destination="UiD-FH-l5s" id="mT3-CR-PFx"/>
                 <outlet property="toolBar" destination="W0Q-hy-JNL" id="M3U-gh-OFG"/>
