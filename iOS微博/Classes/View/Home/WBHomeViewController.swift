@@ -111,8 +111,8 @@ extension WBHomeViewController{
         
         // 2,设置cell
         let viewModel = listViewModel.status[indexPath.row]
-        cell.StatusLabel.text = viewModel.status.text
-        cell.nameLabel.text = viewModel.status.user?.screen_name
+        
+        cell.viewModel = viewModel
 
         // 3,返回cell
         return cell
