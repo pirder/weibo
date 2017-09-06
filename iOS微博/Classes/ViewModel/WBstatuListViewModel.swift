@@ -5,11 +5,11 @@
 //  Created by pirders on 2017/8/21.
 //  Copyright © 2017年 pirders. All rights reserved.
 //
-
+///负责加载数据
 import Foundation
 
  fileprivate let   maxPullTimes = 3
-/// <#Description#>
+/// 负责加载数据
 class WBstatuListViewModel {
     
     lazy var status = [WBstutas]()

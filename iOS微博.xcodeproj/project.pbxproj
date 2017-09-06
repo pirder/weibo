@@ -37,6 +37,7 @@
 		2D4F697E1F408A01007A6869 /* tabbar_compose_button@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D4F697C1F408A01007A6869 /* tabbar_compose_button@3x.png */; };
 		2D8B58241F45F75000E2371F /* WBNetworkMenage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8B58231F45F75000E2371F /* WBNetworkMenage.swift */; };
 		2D9B774D1F5FB9A0007E2657 /* WBUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9B774C1F5FB9A0007E2657 /* WBUser.swift */; };
+		2D9B774F1F5FBDF1007E2657 /* WBstatuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9B774E1F5FBDF1007E2657 /* WBstatuViewModel.swift */; };
 		2DB3893B1F49E1EE00088408 /* WBstutas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB3893A1F49E1EE00088408 /* WBstutas.swift */; };
 		2DB3893E1F49E9D300088408 /* WBstatuListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB3893D1F49E9D300088408 /* WBstatuListViewModel.swift */; };
 		4B279808FAC47FDED39B3D7C /* Pods_iOS__.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F9A8A235567502CB2039D74 /* Pods_iOS__.framework */; };
@@ -96,6 +97,7 @@
 		2D4F697C1F408A01007A6869 /* tabbar_compose_button@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tabbar_compose_button@3x.png"; path = "iOS微博/Assets.xcassets/TabBar/tabbar_compose_button.imageset/tabbar_compose_button@3x.png"; sourceTree = "<group>"; };
 		2D8B58231F45F75000E2371F /* WBNetworkMenage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBNetworkMenage.swift; sourceTree = "<group>"; };
 		2D9B774C1F5FB9A0007E2657 /* WBUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBUser.swift; sourceTree = "<group>"; };
+		2D9B774E1F5FBDF1007E2657 /* WBstatuViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBstatuViewModel.swift; sourceTree = "<group>"; };
 		2DB3893A1F49E1EE00088408 /* WBstutas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBstutas.swift; sourceTree = "<group>"; };
 		2DB3893D1F49E9D300088408 /* WBstatuListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBstatuListViewModel.swift; sourceTree = "<group>"; };
 		3F9A8A235567502CB2039D74 /* Pods_iOS__.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS__.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -274,6 +276,7 @@
 			isa = PBXGroup;
 			children = (
 				2DB3893D1F49E9D300088408 /* WBstatuListViewModel.swift */,
+				2D9B774E1F5FBDF1007E2657 /* WBstatuViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -606,6 +609,7 @@
 				2D9B774D1F5FB9A0007E2657 /* WBUser.swift in Sources */,
 				2D02BCCD1F3DB77E0045AE7B /* WBMessageViewController.swift in Sources */,
 				2D2AC36C1F55643E00A3D60E /* WBOAuthViewController.swift in Sources */,
+				2D9B774F1F5FBDF1007E2657 /* WBstatuViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

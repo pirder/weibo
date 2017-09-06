@@ -15,6 +15,9 @@ class WBstutas: NSObject {
     // 微博信息内容
     var text: String?
     
+    /// 微博用户
+    var user: WBUser?
+    
     //重写该计算型属性
     override var description: String{
     
