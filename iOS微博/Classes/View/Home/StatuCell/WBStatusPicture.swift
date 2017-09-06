@@ -10,6 +10,7 @@ import UIKit
 
 class WBStatusPicture: UIView {
 
-   @IBOutlet weak var heightCount: NSLayoutConstraint!
+    
+        @IBOutlet weak var heigtcount: NSLayoutConstraint!
 
 }

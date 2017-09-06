@@ -28,10 +28,9 @@ class WBStatusCell: UITableViewCell {
       //添加工具栏
          toolBar.viewModel = viewModel
             
-//            //高度辩护
-//            pictureVIew.heightCount.constant = 0
-//            picturetop.constant = 0
-//            
+            //高度辩护
+            pictureVIew.heigtcount.constant = viewModel?.pictureViewSize.height ?? 0 
+
         }
     
     
@@ -57,7 +56,8 @@ class WBStatusCell: UITableViewCell {
     
     @IBOutlet weak var pictureVIew: WBStatusPicture!
     
-    @IBOutlet weak var picturetop: NSLayoutConstraint!
+
+
     
     override func awakeFromNib() {
         super.awakeFromNib()

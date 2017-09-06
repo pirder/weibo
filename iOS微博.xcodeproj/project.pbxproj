@@ -43,6 +43,7 @@
 		2DB3893B1F49E1EE00088408 /* WBstutas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB3893A1F49E1EE00088408 /* WBstutas.swift */; };
 		2DB3893E1F49E9D300088408 /* WBstatuListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB3893D1F49E9D300088408 /* WBstatuListViewModel.swift */; };
 		2DC31B831F60375D006032ED /* WBStatusPicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC31B821F60375D006032ED /* WBStatusPicture.swift */; };
+		2DC31B871F604A52006032ED /* WBPicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC31B861F604A52006032ED /* WBPicture.swift */; };
 		4B279808FAC47FDED39B3D7C /* Pods_iOS__.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F9A8A235567502CB2039D74 /* Pods_iOS__.framework */; };
 /* End PBXBuildFile section */
 
@@ -106,6 +107,7 @@
 		2DB3893A1F49E1EE00088408 /* WBstutas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBstutas.swift; sourceTree = "<group>"; };
 		2DB3893D1F49E9D300088408 /* WBstatuListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBstatuListViewModel.swift; sourceTree = "<group>"; };
 		2DC31B821F60375D006032ED /* WBStatusPicture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBStatusPicture.swift; sourceTree = "<group>"; };
+		2DC31B861F604A52006032ED /* WBPicture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBPicture.swift; sourceTree = "<group>"; };
 		3F9A8A235567502CB2039D74 /* Pods_iOS__.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS__.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A423E274154E474BC14C5B6 /* Pods-iOS微博.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS微博.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOS微博/Pods-iOS微博.debug.xcconfig"; sourceTree = "<group>"; };
 		89EB7C0B0B8C76927F8B95BB /* Pods-iOS微博.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS微博.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOS微博/Pods-iOS微博.release.xcconfig"; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				2DB3893A1F49E1EE00088408 /* WBstutas.swift */,
+				2DC31B861F604A52006032ED /* WBPicture.swift */,
 				2D9B774C1F5FB9A0007E2657 /* WBUser.swift */,
 			);
 			path = Model;
@@ -602,6 +605,7 @@
 				2D02BCCF1F3DB7900045AE7B /* WBDiscoverViewController.swift in Sources */,
 				2D1B50DC1F473160008C5362 /* WBNetworkMenage+Extensions.swift in Sources */,
 				2D4278231F3F6D8B0080A9F3 /* Bundle+Extensions.swift in Sources */,
+				2DC31B871F604A52006032ED /* WBPicture.swift in Sources */,
 				2DB3893B1F49E1EE00088408 /* WBstutas.swift in Sources */,
 				2DA67FED1F60165D00DC5221 /* WBStatusToolBar.swift in Sources */,
 				2D2AC3691F55607D00A3D60E /* WeiBoCommon.swift in Sources */,

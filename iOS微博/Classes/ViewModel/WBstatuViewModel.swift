@@ -29,6 +29,8 @@ class WBstatuViewModel: CustomStringConvertible{
     //赞数
     var likecount: String?
     
+    var pictureViewSize = CGSize()
+    
     
     /// 构造函数
     ///

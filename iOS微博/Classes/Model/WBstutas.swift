@@ -25,11 +25,15 @@ class WBstutas: NSObject {
     /// 微博用户
     var user: WBUser?
     
+    var pic_urls: [WBPicture]?
     
     //重写该计算型属性
     override var description: String{
     
         return yy_modelDescription()
     
+    }
+    class func modelContainerPropertyGenericClass() -> [String:AnyClass] {
+        return ["pic_urls": WBPicture.self]
     }
 }

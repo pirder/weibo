@@ -51,15 +51,26 @@ class WBstatuListViewModel {
             //遍历数组 字典转模型 还要转化为视图模型
             for dict in List ?? [] {
             
-            //1创建微博模型
-             guard let status = WBstutas.yy_model(with: dict) else{
-                continue
-                }
+//            //1创建微博模型
+//             guard let status = WBstutas.yy_model(with: dict) else{
+//                continue
+//                }
+//                
+//                array.append(WBstatuViewModel(model: status))
+//            }
+
+                let status = WBstutas()
                 
-                array.append(WBstatuViewModel(model: status))
+                status.yy_modelSet(with: dict)
+                
+                let viewModel = WBstatuViewModel(model: status)
+                
+                array.append(viewModel)
             }
-      
-            print("刷新条数\(array.count)")
+            
+            print("刷新条数\(array.count) \(array)")
+        
+            
             print("刷新上拉")
 
             
