@@ -21,6 +21,7 @@ class WBstatuViewModel: CustomStringConvertible{
     //存储型属性 //性能优化，用内存去换cpu，提前计算好，不用计算
     var memberIcon: UIImage?
     
+    var vipIcon: UIImage?
     
     
     /// 构造函数
@@ -39,6 +40,23 @@ class WBstatuViewModel: CustomStringConvertible{
             else{
                memberIcon = UIImage(named: "common_icon_membership_expired")
             }
+            
+            //
+            switch model.user?.verified_type ?? -1 {
+            case 0:
+                vipIcon = UIImage(named: "avatar_enterprise_vip")
+            case 2,3,4,5:
+                vipIcon = UIImage(named: "avatar_vip")
+            
+            case 220:
+                
+                vipIcon = UIImage(named: "avatar_grassroot")
+                
+            default:
+              break
+            }
+            
+            
     }
     
     

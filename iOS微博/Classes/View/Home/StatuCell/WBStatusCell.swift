@@ -21,8 +21,8 @@ class WBStatusCell: UITableViewCell {
             
         //微博会员图标
             numberIconView.image = viewModel?.memberIcon            
-
-        
+       //
+            vipIconView.image = viewModel?.vipIcon
         }
     
     
