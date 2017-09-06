@@ -24,6 +24,7 @@ class WBstatuViewModel: CustomStringConvertible{
     var vipIcon: UIImage?
     
     
+    
     /// 构造函数
     ///
     /// - Parameter model: 微博模型
@@ -55,6 +56,7 @@ class WBstatuViewModel: CustomStringConvertible{
             default:
               break
             }
+            
             
             
     }

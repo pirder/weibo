@@ -21,8 +21,10 @@ class WBStatusCell: UITableViewCell {
             
         //微博会员图标
             numberIconView.image = viewModel?.memberIcon            
-       //
+       //设置认证图标
             vipIconView.image = viewModel?.vipIcon
+       //用户头像
+            IconView.et_setImage(urlstring: viewModel?.status.user?.profile_image_url, placeholderImage: UIImage(named: "navigationbar_friendsearch"))
         }
     
     
