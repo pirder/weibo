@@ -12,7 +12,7 @@ import Foundation
 /// 负责加载数据
 class WBstatuListViewModel {
     
-    lazy var status = [WBstutas]()
+    lazy var status = [WBstatuViewModel]()
     
     var PullErrorTimes = 0
     
@@ -32,22 +32,41 @@ class WBstatuListViewModel {
         }
          
         //        取出最近一条微博的数据
-        let since_id = pullup ?  0 : (status.first?.id ?? 0)
+        let since_id = pullup ?  0 : (status.first?.status.id ?? 0)
         
 //        取出最后一条微博数据
-        let max_id = !pullup ? 0 : (status.last?.id ?? 0)
+        let max_id = !pullup ? 0 : (status.last?.status.id ?? 0)
         
         WBNetworkMenage.shared.statusList(since_id: since_id, max_id: max_id) { (List, isSuccess) in
             
-            // 字典转模型
-            guard  let array = NSArray.yy_modelArray(with: WBstutas.self, json: List ?? "")
-                as? [WBstutas]
-                
-                else{
-                    completion(isSuccess, false)
-                    return
-            }
+            //判断网络是否成功
+            if !isSuccess{
+            		completion(false, false)
+                return
             
+            }
+            var array = [WBstatuViewModel]()
+            
+            //遍历数组
+            for dict in List ?? [] {
+            
+            //微博模型
+             guard let model = WBstutas.yy_model(with: dict) else{
+                continue
+                }
+                
+                array.append(WBstatuViewModel(model: model))
+            }
+        
+//            // 字典转模型
+//            guard  let array = NSArray.yy_modelArray(with: WBstutas.self, json: List ?? "")
+//                as? [WBstutas]
+//                
+//                else{
+//                    completion(isSuccess, false)
+//                    return
+//            }
+//            
             print("刷新条数\(array.count)")
             print("刷新上拉")
 
