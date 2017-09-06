@@ -115,9 +115,9 @@
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="W0Q-hy-JNL" firstAttribute="top" relation="greaterThanOrEqual" secondItem="mhS-Ns-1S0" secondAttribute="bottom" constant="22" id="0yv-ZM-YXH"/>
                     <constraint firstItem="gIU-1f-CMl" firstAttribute="leading" secondItem="Zk6-Kb-TqN" secondAttribute="trailing" constant="11" id="5QR-BU-9zI"/>
                     <constraint firstItem="sjQ-du-nYc" firstAttribute="centerY" secondItem="Zk6-Kb-TqN" secondAttribute="bottom" id="7vN-It-Kx7"/>
+                    <constraint firstItem="W0Q-hy-JNL" firstAttribute="top" relation="greaterThanOrEqual" secondItem="mhS-Ns-1S0" secondAttribute="bottom" constant="12" id="8SP-FP-2Rz"/>
                     <constraint firstItem="mhS-Ns-1S0" firstAttribute="top" secondItem="Zk6-Kb-TqN" secondAttribute="bottom" constant="11" id="Gpa-id-YhC"/>
                     <constraint firstItem="UiD-FH-l5s" firstAttribute="bottom" secondItem="Zk6-Kb-TqN" secondAttribute="bottom" id="HbN-pg-l9x"/>
                     <constraint firstItem="rhR-dP-u5z" firstAttribute="leading" secondItem="UiD-FH-l5s" secondAttribute="trailing" constant="8" id="I1e-ha-LoW"/>
