@@ -12,7 +12,7 @@ import SDWebImage
 
 extension UIImageView{
 
-
+    
     func et_setImage(urlstring: String?,placeholderImage: UIImage?)  {
         
         guard let urlstring = urlstring,
@@ -22,6 +22,9 @@ extension UIImageView{
         }
        sd_setImage(with: url, placeholderImage: image, options: []) { (image, _, _, _) in
         
+        //设置圆角图片，没有考虑性能
+        self.layer.masksToBounds = true
+        self.layer.cornerRadius = self.frame.width/2
         }
     }
     
