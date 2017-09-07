@@ -91,7 +91,7 @@ class WBstatuViewModel: CustomStringConvertible{
     /// - Returns: 返回值
     fileprivate func calcPictureViewSize(count: Int?) -> CGSize{
     
-        if count == 0 && count == nil{
+        if count == 0 || count == nil{
             return CGSize()
         }
         
