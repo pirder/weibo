@@ -91,19 +91,9 @@ class WBstatuViewModel: CustomStringConvertible{
     /// - Returns: 返回值
     fileprivate func calcPictureViewSize(count: Int?) -> CGSize{
     
-        if count == 0 {
+        if count == 0 && count == nil{
             return CGSize()
         }
-        
-        //配图外部的边距
-        let WBStatusPictureViewOutMargin = CGFloat(12)
-        //配图内部边距
-        let WBStatusPictureViewInMargin = CGFloat(3)
-        ///视图宽度
-        let WBStatusPictureViewWidth = UIScreen.main.bounds.width - (WBStatusPictureViewInMargin * 2)
-        
-        //每个小图的宽度
-        let WBStatusPictureItemWidth = (WBStatusPictureViewWidth - WBStatusPictureViewInMargin * 2) / 3
         
         //小图的行数
         let row = (count! - 1) / 3 + 1
