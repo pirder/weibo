@@ -29,7 +29,9 @@ class WBStatusCell: UITableViewCell {
          toolBar.viewModel = viewModel
             
             //高度辩护
-            pictureVIew.heigtcount.constant = viewModel?.pictureViewSize.height ?? 0 
+            pictureVIew.heigtcount.constant = viewModel?.pictureViewSize.height ?? 0
+            
+            pictureVIew.urls = viewModel?.status.pic_urls
 
         }
     
