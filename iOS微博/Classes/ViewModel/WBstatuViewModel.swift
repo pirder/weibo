@@ -69,7 +69,12 @@ class WBstatuViewModel: CustomStringConvertible{
             commentcount = countString(count: model.comments_count, defaultString: "评论")
             likecount = countString(count: model.attitudes_count, defaultString: "赞")
             
+            
+            //计算试图模型
+            pictureViewSize = calcPictureViewSize(count: status.pic_urls?.count)
     }
+    
+    
     
     
     var description: String{
@@ -77,6 +82,38 @@ class WBstatuViewModel: CustomStringConvertible{
         return status.description
     
     }
+    
+    
+    
+    /// /// 计算配图大小
+    ///
+    /// - Parameter count: 配图数量
+    /// - Returns: 返回值
+    fileprivate func calcPictureViewSize(count: Int?) -> CGSize{
+    
+        if count == 0 {
+            return CGSize()
+        }
+        
+        //配图外部的边距
+        let WBStatusPictureViewOutMargin = CGFloat(12)
+        //配图内部边距
+        let WBStatusPictureViewInMargin = CGFloat(3)
+        ///视图宽度
+        let WBStatusPictureViewWidth = UIScreen.main.bounds.width - (WBStatusPictureViewInMargin * 2)
+        
+        //每个小图的宽度
+        let WBStatusPictureItemWidth = (WBStatusPictureViewWidth - WBStatusPictureViewInMargin * 2) / 3
+        
+        //小图的行数
+        let row = (count! - 1) / 3 + 1
+        
+        let height = WBStatusPictureViewOutMargin + CGFloat(row) * WBStatusPictureItemWidth + CGFloat(row - 1) * WBStatusPictureViewInMargin
+        
+      return CGSize(width: WBStatusPictureViewWidth, height: height)
+        
+    }
+    
     
     
     /// <#Description#>
