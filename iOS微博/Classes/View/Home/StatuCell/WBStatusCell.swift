@@ -31,8 +31,18 @@ class WBStatusCell: UITableViewCell {
             //高度辩护
             pictureVIew.heigtcount.constant = viewModel?.pictureViewSize.height ?? 0
             
-            pictureVIew.urls = viewModel?.status.pic_urls
+            //4张图像
+            if (viewModel?.status.pic_urls?.count)! > 4 {
+                
+                var picURls = viewModel?.status.pic_urls
+                
+                picURls?.removeSubrange((picURls?.startIndex)! + 4 ..< (picURls?.endIndex)!)
+                pictureVIew.urls = picURls
 
+            }else{
+            
+            pictureVIew.urls = viewModel?.status.pic_urls
+            }
         }
     
     

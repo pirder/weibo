@@ -24,6 +24,11 @@ class WBStatusPicture: UIView {
                 
                 let iv = subviews[index] as! UIImageView
 
+                if index == 1 && urls?.count == 4 {
+                    
+                    index += 1
+                }
+                
                 let uu = URL(string: url.thumbnail_pic!)
                 
                 iv.setImageWith(uu!)
@@ -51,10 +56,15 @@ extension WBStatusPicture{
     /// <#Description#>
     fileprivate func setupUi(){
     
+        
+        //背景图
+        backgroundColor = superview?.backgroundColor
+        
         //超出内容不显示
         clipsToBounds = true
         
-        //人图片等比例
+       
+        
         
         let count = 3
         
@@ -65,8 +75,10 @@ extension WBStatusPicture{
             
             
             let iv = UIImageView()
-       
-            iv.backgroundColor = UIColor.red
+            
+            //人图片等比例
+            iv.contentMode = .scaleAspectFill
+            iv.clipsToBounds = true
             
             //行
             let row = CGFloat(i / 3)
@@ -76,6 +88,7 @@ extension WBStatusPicture{
             iv.frame = rect.offsetBy(dx: col * (WBStatusPictureItemWidth + WBStatusPictureViewInMargin), dy: row * (WBStatusPictureItemWidth + WBStatusPictureViewInMargin))
 
             addSubview(iv)
+            
         }
         
     
